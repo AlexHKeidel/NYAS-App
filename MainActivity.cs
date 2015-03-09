@@ -7,27 +7,29 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using Java.Math;
+
 namespace NYASApp
 {
 	[Activity (Label = "NYAS-App", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
-			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
-
+			int number;
+			Random randy = new Random ();
+			number = randy.Next (100); //roll random number between 0 (inclusive) and 100 (exclusive)
+			//rolling 0 or 1 is too unreliable and seems to always return 0
+			Toast.MakeText (this, "number = " + number, ToastLength.Long).Show();
+			if (number <= 50) {
+				SetContentView (Resource.Layout.Splash_One);
+			} else {
+				SetContentView (Resource.Layout.Splash_Two);
+			}
 			// Get our button from the layout resource,
 			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.myButton);
-			
-			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
-			};
 		}
 	}
 }
