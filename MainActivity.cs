@@ -17,19 +17,33 @@ namespace NYASApp
 
 		protected override void OnCreate (Bundle bundle)
 		{
+			RequestWindowFeature (WindowFeatures.NoTitle); //removing top bar from the app
 			base.OnCreate (bundle);
+			SetContentView (Resource.Layout.Splash_Screen_Layout); //setting layout
+
+			ImageView SplashImage = (ImageView)FindViewById (Resource.Id.SplashImage);
+
 			int number;
 			Random randy = new Random ();
 			number = randy.Next (100); //roll random number between 0 (inclusive) and 100 (exclusive)
 			//rolling 0 or 1 is too unreliable and seems to always return 0
-			Toast.MakeText (this, "number = " + number, ToastLength.Long).Show();
+			//Toast.MakeText (this, "number = " + number, ToastLength.Long).Show();
 			if (number <= 50) {
-				SetContentView (Resource.Layout.Splash_One);
+				SplashImage.SetImageDrawable (Resources.GetDrawable(Resource.Drawable.Splash_Screen_One));
 			} else {
-				SetContentView (Resource.Layout.Splash_Two);
+				SplashImage.SetImageDrawable (Resources.GetDrawable(Resource.Drawable.Splash_Screen_Two));
 			}
+
+			SplashImage.Click += delegate { //setting button listener to start the homepage activity
+				startHomepageActivity();
+			};
 			// Get our button from the layout resource,
 			// and attach an event to it
+		}
+
+		private void startHomepageActivity(){
+			StartActivity (typeof(HomepageActivity)); //start a new HomepageActivity
+			Finish ();
 		}
 	}
 }

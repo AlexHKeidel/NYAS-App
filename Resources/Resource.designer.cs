@@ -67,10 +67,13 @@ namespace NYASApp
 			public const int Icon = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Splash_Screen_One = 2130837505;
+			public const int Rectangle = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int Splash_Screen_Two = 2130837506;
+			public const int Splash_Screen_One = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int Splash_Screen_Two = 2130837507;
 			
 			static Drawable()
 			{
@@ -82,14 +85,45 @@ namespace NYASApp
 			}
 		}
 		
+		public partial class Id
+		{
+			
+			// aapt resource value: 0x7f060005
+			public const int SplashImage = 2131099653;
+			
+			// aapt resource value: 0x7f060004
+			public const int buttonBottomLeft = 2131099652;
+			
+			// aapt resource value: 0x7f060003
+			public const int buttonBottomRight = 2131099651;
+			
+			// aapt resource value: 0x7f060001
+			public const int buttonTopLeft = 2131099649;
+			
+			// aapt resource value: 0x7f060002
+			public const int buttonTopRight = 2131099650;
+			
+			// aapt resource value: 0x7f060000
+			public const int relativeLayout1 = 2131099648;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Id()
+			{
+			}
+		}
+		
 		public partial class Layout
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Splash_One = 2130903040;
+			public const int HomepageLayout = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Splash_Two = 2130903041;
+			public const int Splash_Screen_Layout = 2130903041;
 			
 			static Layout()
 			{

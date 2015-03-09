@@ -18,6 +18,7 @@ namespace NYASApp
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
+			RequestWindowFeature (WindowFeatures.NoTitle); //removing top bar from the app
 			base.OnCreate (bundle);
 
 			// Create your application here

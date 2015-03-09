@@ -16,12 +16,21 @@ public final class R {
     }
     public static final class drawable {
         public static final int icon=0x7f020000;
-        public static final int splash_screen_one=0x7f020001;
-        public static final int splash_screen_two=0x7f020002;
+        public static final int rectangle=0x7f020001;
+        public static final int splash_screen_one=0x7f020002;
+        public static final int splash_screen_two=0x7f020003;
+    }
+    public static final class id {
+        public static final int SplashImage=0x7f060005;
+        public static final int buttonBottomLeft=0x7f060004;
+        public static final int buttonBottomRight=0x7f060003;
+        public static final int buttonTopLeft=0x7f060001;
+        public static final int buttonTopRight=0x7f060002;
+        public static final int relativeLayout1=0x7f060000;
     }
     public static final class layout {
-        public static final int splash_one=0x7f030000;
-        public static final int splash_two=0x7f030001;
+        public static final int homepagelayout=0x7f030000;
+        public static final int splash_screen_layout=0x7f030001;
     }
     public static final class string {
         public static final int app_name=0x7f050001;

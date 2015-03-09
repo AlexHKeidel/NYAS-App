@@ -17,5 +17,6 @@ G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\drawable-hdpi\splash_screen
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\drawable-hdpi\splash_screen_two.png
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\R.cs.flag
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\uploadflags.txt
-G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\layout\splash_one.xml
-G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\layout\splash_two.xml
+G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\layout\homepagelayout.xml
+G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\drawable-hdpi\rectangle.xml
+G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\layout\splash_screen_layout.xml

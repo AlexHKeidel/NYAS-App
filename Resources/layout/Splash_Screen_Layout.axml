@@ -10,5 +10,6 @@
         android:src="@drawable/Splash_Screen_One"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/SplashImage" />
+        android:id="@+id/SplashImage"
+        android:layout_marginBottom="1.7dp" />
 </LinearLayout>

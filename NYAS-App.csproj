@@ -64,9 +64,9 @@
     <AndroidResource Include="Resources\values\colours.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\Splash_Screen_One.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Splash_Screen_Two.png" />
-    <AndroidResource Include="Resources\layout\Splash_One.axml" />
-    <AndroidResource Include="Resources\layout\Splash_Two.axml" />
-    <AndroidResource Include="Resources\layout\HomepageLayout.xml" />
+    <AndroidResource Include="Resources\layout\HomepageLayout.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\Rectangle.xml" />
+    <AndroidResource Include="Resources\layout\Splash_Screen_Layout.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

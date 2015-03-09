@@ -1,1 +1,2 @@
 NYASApp.MainActivity;nyasapp.MainActivity
+NYASApp.HomepageActivity;nyasapp.HomepageActivity
