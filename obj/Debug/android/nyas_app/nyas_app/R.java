@@ -12,21 +12,41 @@ public final class R {
     }
     public static final class color {
         public static final int backgroundPeach=0x7f040001;
+        public static final int blueGradientEnd=0x7f040006;
+        public static final int blueGradientStart=0x7f040005;
+        public static final int greenGradientEnd=0x7f04000a;
+        public static final int greenGradientStart=0x7f040009;
+        public static final int orangeGradientEnd=0x7f040008;
+        public static final int orangeGradientStart=0x7f040007;
+        public static final int purpleGradientEnd=0x7f04000c;
+        public static final int purpleGradientStart=0x7f04000b;
+        public static final int redGradientEnd=0x7f040003;
+        public static final int redGradientStart=0x7f040002;
+        public static final int redGradientStroke=0x7f040004;
         public static final int transparent=0x7f040000;
     }
     public static final class drawable {
         public static final int icon=0x7f020000;
-        public static final int rectangle=0x7f020001;
-        public static final int splash_screen_one=0x7f020002;
-        public static final int splash_screen_two=0x7f020003;
+        public static final int nyas_logo=0x7f020001;
+        public static final int rectangle=0x7f020002;
+        public static final int rectangle_blue_gradient=0x7f020003;
+        public static final int rectangle_green_gradient=0x7f020004;
+        public static final int rectangle_orange_gradient=0x7f020005;
+        public static final int rectangle_purple_gradient=0x7f020006;
+        public static final int rectangle_red_gradient=0x7f020007;
+        public static final int speech_bubble_empty=0x7f020008;
+        public static final int splash_screen_one=0x7f020009;
+        public static final int splash_screen_two=0x7f02000a;
     }
     public static final class id {
-        public static final int SplashImage=0x7f060005;
-        public static final int buttonBottomLeft=0x7f060004;
-        public static final int buttonBottomRight=0x7f060003;
+        public static final int SplashImage=0x7f060007;
+        public static final int buttonBottomLeft=0x7f060005;
+        public static final int buttonBottomRight=0x7f060004;
         public static final int buttonTopLeft=0x7f060001;
-        public static final int buttonTopRight=0x7f060002;
+        public static final int buttonTopRight=0x7f060003;
+        public static final int nyasLogo=0x7f060006;
         public static final int relativeLayout1=0x7f060000;
+        public static final int speechBubble=0x7f060002;
     }
     public static final class layout {
         public static final int homepagelayout=0x7f030000;
