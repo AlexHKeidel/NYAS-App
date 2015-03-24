@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="NYAS_App.NYAS_App">
   <uses-sdk android:minSdkVersion="19" />
-  <application android:label="NYAS-App" android:name="mono.android.app.Application" android:debuggable="true">
+  <application android:label="NYAS-App" android:icon="@drawable/icon_example" android:name="mono.android.app.Application" android:debuggable="true">
     <activity android:icon="@drawable/icon" android:label="NYAS-App" android:name="nyasapp.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
