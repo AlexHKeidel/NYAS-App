@@ -2,18 +2,27 @@
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">NYAS-App</string>
+
 	<string name="KidsZone">Kids Zone</string>
 	<string name="GetInTouch">Get in Touch</string>
 	<string name="MoreInfo">More Info</string>
 	<string name="CarerInfo">Carer Info</string>
+
 	<string name="feelingBlue">I am feeling blue</string>
 	<string name="SchoolProblems">School Problems</string>
 	<string name="NotFair">Not fair!</string>
 	<string name="Advice">I need advice</string>
+
 	<string name="ContactNYAS">Contact NYAS</string>
 	<string name="MoreCarerInfo">More Carer Info</string>
 	<string name="AboutUs">About Us</string>
 	<string name="BecomeACarer">Become a Carer</string>
+
+	<string name="SpecialCharacter1">~</string>
+	<string name="SpecialCharacter2">Ø</string>
+	<string name="SpecialCharacter3">ǂ</string>
+	<string name="SpecialCharacter4">þ</string>
+
 	<string name="AboutUsDetailed">We offer information, advice, advocacy and legal representation to children, young people and vulnerable adults.</string>
 
 	<string name="BubbleMsg1">Welcome to the NYAS App!</string>
@@ -40,5 +49,12 @@
 		<item>@string/MoreCarerInfo</item>
 		<item>@string/BecomeACarer</item>
 		<item>@string/ContactNYAS</item>
+	</string-array>
+
+	<string-array name="LoginStrings">
+		<item>@string/SpecialCharacter1</item>
+		<item>@string/SpecialCharacter2</item>
+		<item>@string/SpecialCharacter3</item>
+		<item>@string/SpecialCharacter4</item>
 	</string-array>
 </resources>

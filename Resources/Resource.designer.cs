@@ -40,6 +40,9 @@ namespace NYASApp
 			// aapt resource value: 0x7f070001
 			public const int KidsZoneScreenStrings = 2131165185;
 			
+			// aapt resource value: 0x7f070003
+			public const int LoginStrings = 2131165187;
+			
 			static Array()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -129,6 +132,12 @@ namespace NYASApp
 		
 		public partial class Dimension
 		{
+			
+			// aapt resource value: 0x7f050002
+			public const int ButtonTextSize = 2131034114;
+			
+			// aapt resource value: 0x7f050003
+			public const int SpecialButtonSize = 2131034115;
 			
 			// aapt resource value: 0x7f050000
 			public const int buttonCornerRadius = 2131034112;
@@ -272,8 +281,8 @@ namespace NYASApp
 			// aapt resource value: 0x7f06000c
 			public const int AboutUs = 2131099660;
 			
-			// aapt resource value: 0x7f06000e
-			public const int AboutUsDetailed = 2131099662;
+			// aapt resource value: 0x7f060012
+			public const int AboutUsDetailed = 2131099666;
 			
 			// aapt resource value: 0x7f060009
 			public const int Advice = 2131099657;
@@ -281,17 +290,17 @@ namespace NYASApp
 			// aapt resource value: 0x7f06000d
 			public const int BecomeACarer = 2131099661;
 			
-			// aapt resource value: 0x7f06000f
-			public const int BubbleMsg1 = 2131099663;
+			// aapt resource value: 0x7f060013
+			public const int BubbleMsg1 = 2131099667;
 			
-			// aapt resource value: 0x7f060010
-			public const int BubbleMsg2 = 2131099664;
+			// aapt resource value: 0x7f060014
+			public const int BubbleMsg2 = 2131099668;
 			
-			// aapt resource value: 0x7f060011
-			public const int BubbleMsg3 = 2131099665;
+			// aapt resource value: 0x7f060015
+			public const int BubbleMsg3 = 2131099669;
 			
-			// aapt resource value: 0x7f060012
-			public const int BubbleMsg4 = 2131099666;
+			// aapt resource value: 0x7f060016
+			public const int BubbleMsg4 = 2131099670;
 			
 			// aapt resource value: 0x7f060005
 			public const int CarerInfo = 2131099653;
@@ -316,6 +325,18 @@ namespace NYASApp
 			
 			// aapt resource value: 0x7f060007
 			public const int SchoolProblems = 2131099655;
+			
+			// aapt resource value: 0x7f06000e
+			public const int SpecialCharacter1 = 2131099662;
+			
+			// aapt resource value: 0x7f06000f
+			public const int SpecialCharacter2 = 2131099663;
+			
+			// aapt resource value: 0x7f060010
+			public const int SpecialCharacter3 = 2131099664;
+			
+			// aapt resource value: 0x7f060011
+			public const int SpecialCharacter4 = 2131099665;
 			
 			// aapt resource value: 0x7f060001
 			public const int app_name = 2131099649;

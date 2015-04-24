@@ -14,7 +14,7 @@
         android:id="@+id/relativeLayout1">
         <Button
             android:text="Top Left"
-            android:textSize="30sp"
+            android:textSize="@dimen/ButtonTextSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonTopLeft"
@@ -26,7 +26,7 @@
             android:textColor="@color/white" />
         <Button
             android:text="Top Right"
-            android:textSize="30sp"
+            android:textSize="@dimen/ButtonTextSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonTopRight"
@@ -38,7 +38,7 @@
             android:textColor="@color/white" />
         <Button
             android:text="Bottom Right"
-            android:textSize="30sp"
+            android:textSize="@dimen/ButtonTextSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonBottomRight"
@@ -50,7 +50,7 @@
             android:textColor="@color/white" />
         <Button
             android:text="Bottom Left"
-            android:textSize="30sp"
+            android:textSize="@dimen/ButtonTextSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonBottomLeft"
