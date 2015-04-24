@@ -21,10 +21,11 @@ namespace NYASApp
 		ImageView speechBubble, nyasLogo;
 		TextView speechBubbleText;
 
-		int currentState;
 		const int DEFAULT_HOME_STATE = 0;
 		const int KIDS_ZONE_STATE = 1;
 		const int CARER_INFO_STATE = 2;
+		int currentState = DEFAULT_HOME_STATE;
+		int previousState = -1; //used for error catching
 
 		const String TopLeft = "TopLeft";
 		const String TopRight = "TopRight";
@@ -138,7 +139,7 @@ namespace NYASApp
 			CarerInfoStrings = new String[CarerInfoArray.Length()];
 			CarerInfoStringIDs = new int[CarerInfoArray.Length()];
 
-			for (int i = 0; i < 4; i++) {
+			for (int i = 0; i < 4; i++) { //every array has been tested to have exactly 4 items in it, so we can loop exactly 4 times
 				DefaultStrings [i] = DefaultArray.GetString (i);
 				DefaultStringIDs [i] = DefaultArray.GetResourceId (i, -1); //default value of -1 if resource id was not found
 
@@ -171,6 +172,7 @@ namespace NYASApp
 				}
 				break;
 			}
+			previousState = currentState; //setting previous state
 			currentState = state; //setting new state
 		}
 
@@ -190,6 +192,23 @@ namespace NYASApp
 
 				case BottomRight:
 					applyState (CARER_INFO_STATE);
+					break;
+				}
+				break;
+
+			case KIDS_ZONE_STATE:
+				switch(selectedButton){
+				case TopLeft:
+					break;
+				case TopRight:
+
+					break;
+				case BottomLeft:
+
+					break;
+
+				case BottomRight:
+					
 					break;
 				}
 				break;
@@ -241,6 +260,14 @@ namespace NYASApp
 				break;
 			}
 		}
+
+		public override void OnBackPressed ()
+		{
+			if (previousState == -1 || currentState == DEFAULT_HOME_STATE) { //default value, quit the app!
+				base.OnBackPressed ();
+			} else {
+			applyState (previousState); //go to the previous state of the application
+			}
+		}
 	}
 }
-
