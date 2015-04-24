@@ -76,6 +76,8 @@
     <AndroidResource Include="Resources\drawable-hdpi\rectangle_purple_gradient.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\Icon_Example.png" />
     <AndroidResource Include="Resources\drawable-hdpi\NYAS_App_Logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\rectangle_peach_gradient.xml" />
+    <AndroidResource Include="Resources\values\dimensions.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

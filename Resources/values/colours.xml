@@ -2,7 +2,10 @@
 <resources>
 	<color name="transparent">#00ffffff</color>
 	<color name="white">#ffffffff</color>
+	<color name="infoTextRed">#EB3F3F</color>
 	<color name="backgroundPeach">#FFFEEBDE</color>
+	<color name="peachGradientStart">#FFEFAE</color>
+	<color name="peachGradientEnd">#FFF7D6</color>
 	<color name="redGradientStart">#ef4444</color>
 	<color name="redGradientEnd">#992f2f</color>
 	<color name="redGradientStroke">#992f2f</color>

@@ -90,5 +90,18 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp" />
         </RelativeLayout>
+        <TextView
+            android:id="@+id/BottomInfoText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/AboutUsDetailed"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/infoTextRed"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/buttonBottomLeft" />
     </RelativeLayout>
 </LinearLayout>

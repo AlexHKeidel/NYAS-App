@@ -19,7 +19,7 @@ namespace NYASApp
 		Button buttonTopLeft, buttonTopRight, buttonBottomLeft, buttonBottomRight; //four buttons represented on the screen in order as you would read (top left to bottom right)
 		Button[] buttons;
 		ImageView speechBubble, nyasLogo;
-		TextView speechBubbleText;
+		TextView speechBubbleText, bottomTextBox;
 
 		const int DEFAULT_HOME_STATE = 0;
 		const int KIDS_ZONE_STATE = 1;
@@ -63,27 +63,32 @@ namespace NYASApp
 
 			//setting the button dimensions to the width of the screen divided by two and a little margin (15 pixels)
 			int buttonDimensions = metrics.WidthPixels / 2 - 15; //!!!
+			int remainingScreenHeight = metrics.HeightPixels; //this is used to keep track of the remaining screen height
 
 			//finding the buttons via their id and setting their background to the gradient drawable
 			buttonTopLeft = (Button) FindViewById (Resource.Id.buttonTopLeft);
 			buttonTopLeft.SetBackgroundDrawable (Resources.GetDrawable(Resource.Drawable.rectangle_blue_gradient));
 			buttonTopLeft.SetWidth (buttonDimensions); //using same dimensions for width and height to make buttons square
 			buttonTopLeft.SetHeight (buttonDimensions);
+			remainingScreenHeight -= buttonDimensions;
 
 			buttonTopRight = (Button) FindViewById (Resource.Id.buttonTopRight);
 			buttonTopRight.SetBackgroundDrawable (Resources.GetDrawable(Resource.Drawable.rectangle_green_gradient));
 			buttonTopRight.SetWidth (buttonDimensions);
 			buttonTopRight.SetHeight (buttonDimensions);
+			remainingScreenHeight -= buttonDimensions;
 
 			buttonBottomLeft = (Button) FindViewById (Resource.Id.buttonBottomLeft);
 			buttonBottomLeft.SetBackgroundDrawable (Resources.GetDrawable(Resource.Drawable.rectangle_orange_gradient));
 			buttonBottomLeft.SetWidth (buttonDimensions);
 			buttonBottomLeft.SetHeight (buttonDimensions);
+			remainingScreenHeight -= buttonDimensions;
 
 			buttonBottomRight = (Button) FindViewById (Resource.Id.buttonBottomRight);
 			buttonBottomRight.SetBackgroundDrawable (Resources.GetDrawable(Resource.Drawable.rectangle_purple_gradient));
 			buttonBottomRight.SetWidth (buttonDimensions);
 			buttonBottomRight.SetHeight (buttonDimensions);
+			remainingScreenHeight -= buttonDimensions;
 
 			nyasLogo = (ImageView)FindViewById (Resource.Id.nyasLogo);
 			nyasLogo.SetAdjustViewBounds (true); //making the imageview scaleable
@@ -99,6 +104,10 @@ namespace NYASApp
 			//setting speech bubble text max height and width
 			speechBubbleText.SetMaxWidth ((int) (metrics.WidthPixels / 2.3));
 			speechBubbleText.SetMaxHeight (metrics.WidthPixels / 2);
+
+			bottomTextBox = (TextView)FindViewById (Resource.Id.BottomInfoText);
+			bottomTextBox.SetBackgroundDrawable (Resources.GetDrawable(Resource.Drawable.rectangle_peach_gradient));
+			bottomTextBox.Gravity = GravityFlags.CenterHorizontal;
 
 			//adding the buttons into an array, as you would read them from top left to bottom right
 			buttons = new Button[4];
