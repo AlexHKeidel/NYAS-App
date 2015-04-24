@@ -9,6 +9,7 @@ package nyas_app.nyas_app;
 
 public final class R {
     public static final class array {
+        public static final int CarerInfoStrings=0x7f060002;
         public static final int DefaultHomeScreenStrings=0x7f060000;
         public static final int KidsZoneScreenStrings=0x7f060001;
     }
@@ -33,16 +34,17 @@ public final class R {
     public static final class drawable {
         public static final int icon=0x7f020000;
         public static final int icon_example=0x7f020001;
-        public static final int nyas_logo=0x7f020002;
-        public static final int rectangle=0x7f020003;
-        public static final int rectangle_blue_gradient=0x7f020004;
-        public static final int rectangle_green_gradient=0x7f020005;
-        public static final int rectangle_orange_gradient=0x7f020006;
-        public static final int rectangle_purple_gradient=0x7f020007;
-        public static final int rectangle_red_gradient=0x7f020008;
-        public static final int speech_bubble_empty=0x7f020009;
-        public static final int splash_screen_one=0x7f02000a;
-        public static final int splash_screen_two=0x7f02000b;
+        public static final int nyas_app_logo=0x7f020002;
+        public static final int nyas_logo=0x7f020003;
+        public static final int rectangle=0x7f020004;
+        public static final int rectangle_blue_gradient=0x7f020005;
+        public static final int rectangle_green_gradient=0x7f020006;
+        public static final int rectangle_orange_gradient=0x7f020007;
+        public static final int rectangle_purple_gradient=0x7f020008;
+        public static final int rectangle_red_gradient=0x7f020009;
+        public static final int speech_bubble_empty=0x7f02000a;
+        public static final int splash_screen_one=0x7f02000b;
+        public static final int splash_screen_two=0x7f02000c;
     }
     public static final class id {
         public static final int SplashImage=0x7f070009;
@@ -61,14 +63,18 @@ public final class R {
         public static final int splash_screen_layout=0x7f030001;
     }
     public static final class string {
+        public static final int AboutUs=0x7f05000c;
         public static final int Advice=0x7f050009;
-        public static final int BubbleMsg1=0x7f05000a;
-        public static final int BubbleMsg2=0x7f05000b;
-        public static final int BubbleMsg3=0x7f05000c;
-        public static final int BubbleMsg4=0x7f05000d;
+        public static final int BecomeACarer=0x7f05000d;
+        public static final int BubbleMsg1=0x7f05000e;
+        public static final int BubbleMsg2=0x7f05000f;
+        public static final int BubbleMsg3=0x7f050010;
+        public static final int BubbleMsg4=0x7f050011;
         public static final int CarerInfo=0x7f050005;
+        public static final int ContactNYAS=0x7f05000a;
         public static final int GetInTouch=0x7f050003;
         public static final int KidsZone=0x7f050002;
+        public static final int MoreCarerInfo=0x7f05000b;
         public static final int MoreInfo=0x7f050004;
         public static final int NotFair=0x7f050008;
         public static final int SchoolProblems=0x7f050007;

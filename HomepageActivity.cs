@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace NYASApp
 {
-	[Activity (Label = "HomepageActivity")]			
+	[Activity (Label = "HomepageActivity", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]			
 	public class HomepageActivity : Activity
 	{
 		Button buttonTopLeft, buttonTopRight, buttonBottomLeft, buttonBottomRight; //four buttons represented on the screen in order as you would read (top left to bottom right)
@@ -24,6 +24,22 @@ namespace NYASApp
 		int currentState;
 		const int DEFAULT_HOME_STATE = 0;
 		const int KIDS_ZONE_STATE = 1;
+		const int CARER_INFO_STATE = 2;
+
+		const String TopLeft = "TopLeft";
+		const String TopRight = "TopRight";
+		const String BottomLeft = "BottomLeft";
+		const String BottomRight = "BottomRight";
+
+		String[] DefaultStrings;
+		int[] DefaultStringIDs;
+
+		String[] KidsZoneStrings;
+		int[] KidsZoneStringIDs;
+
+		String[] CarerInfoStrings;
+		int[] CarerInfoStringIDs;
+
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -31,6 +47,7 @@ namespace NYASApp
 			base.OnCreate (bundle);
 			SetContentView (Resource.Layout.HomepageLayout);
 			setupLayouts (); //setting up all button and view layouts
+			setupResourceStringIDs (); //setting up the string ids associated with each possible state of this activity
 			applyState (DEFAULT_HOME_STATE); //initialising default state of the page
 			applyButtonListeners (); //setting up button listeners
 			applyRandomBubbleMessage ();
@@ -92,48 +109,118 @@ namespace NYASApp
 
 		private int ConvertPixelsToDp(float pixelValue)
 		{
-			var dp = (int) ((pixelValue)/Resources.DisplayMetrics.Density);
-			return dp;
+			return (int) ((pixelValue)/Resources.DisplayMetrics.Density); //returning converted pixelValue as an integer
+		}
+
+		private void setupResourceStringIDs(){
+			//getting the relevant array (of Strings) from the Strings.xml file
+			//saving the resource ids of the Strings contained within the arrays in their respective integer array
+			//this is done because you can not set the text of a button to a string, but only to a resource id
+			var DefaultArray = Resources.ObtainTypedArray (Resource.Array.DefaultHomeScreenStrings);
+			if (DefaultArray.Length() != 4) {
+				throw new Exception ("Default Home Page array was not equal to 4. Please fix this in the Strings.xml file."); //this array must be the length of 4!
+			}
+			DefaultStrings = new String[DefaultArray.Length ()]; //String array initialised with the size of the according array
+			DefaultStringIDs = new int[DefaultArray.Length()]; //Int array initialised to the amount of strings within the according array
+
+
+			var KidsZoneArray = Resources.ObtainTypedArray (Resource.Array.KidsZoneScreenStrings);
+			if (KidsZoneArray.Length() != 4) {
+				throw new Exception ("Kids Zone array was not equal to 4. Please fix this in the Strings.xml file."); //this array must be the length of 4!
+			}
+			KidsZoneStrings = new String[KidsZoneArray.Length()];
+			KidsZoneStringIDs = new int[KidsZoneArray.Length()];
+
+			var CarerInfoArray = Resources.ObtainTypedArray (Resource.Array.CarerInfoStrings);
+			if (CarerInfoArray.Length() != 4) {
+				throw new Exception ("Carer Info array was not equal to 4. Please fix this in the Strings.xml file."); //this array must be the length of 4!
+			}
+			CarerInfoStrings = new String[CarerInfoArray.Length()];
+			CarerInfoStringIDs = new int[CarerInfoArray.Length()];
+
+			for (int i = 0; i < 4; i++) {
+				DefaultStrings [i] = DefaultArray.GetString (i);
+				DefaultStringIDs [i] = DefaultArray.GetResourceId (i, -1); //default value of -1 if resource id was not found
+
+				KidsZoneStrings [i] = KidsZoneArray.GetString (i);
+				KidsZoneStringIDs [i] = KidsZoneArray.GetResourceId (i, -1);
+
+				CarerInfoStrings [i] = CarerInfoArray.GetString (i);
+				CarerInfoStringIDs [i] = CarerInfoArray.GetResourceId (i, -1);
+			}
 		}
 
 		private void applyState(int state){ //apply the chosen state to this activity
 			//determine chosen state
-			Console.WriteLine ("state = " + state + " DEFAULT_HOME_STATE = " + DEFAULT_HOME_STATE);
 			switch (state) {
-
 			case DEFAULT_HOME_STATE:
-				currentState = state;
-				//getting the chosen array of strings from the Strings.xml file
-				var defR = Resources.ObtainTypedArray(Resource.Array.DefaultHomeScreenStrings); //getting an array of the RESOURCE IDS NOT STRINGS FFS HOLY SHEET OMG WHY DOES BUTTON.SETTEXT ONY ACCEPT FUCKING RESOURCE VALUES..........
-				for (int i = 0; i < defR.Length(); i++) {
-					var defID = defR.GetResourceId(i, -1); //getting the resource id from the specified part of the string array in Strings.xml
-					//REMEMBER: FOR THIS TO WORK THE STRINGS INSIDE THE STRING ARRAY MUST BE REFERNCES TO STRINGS AS IN @string/BLA not just BLA
-					//apply the text to the buttons
-					buttons [i].SetText (defID); //THIS ONLY ACCEPTS RESOURCE IDS NOT STRINGS! OKAY XAMARIN, OKAY, HAVE IT YOUR BLOODY WAY!
+				for (int i = 0; i < 4; i++) {
+					buttons [i].SetText (DefaultStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
 				}
 				break;
 
 			case KIDS_ZONE_STATE:
-				var kidsR = Resources.ObtainTypedArray(Resource.Array.KidsZoneScreenStrings);
-				for (int i = 0; i < kidsR.Length(); i++){
-					var kidsID = kidsR.GetResourceId (i, -1);
-					buttons [i].SetText (kidsID);
+				for (int i = 0; i < 4; i++) {
+					buttons [i].SetText (KidsZoneStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
+				}
+				break;
+
+			case CARER_INFO_STATE:
+				for (int i = 0; i < 4; i++) {
+					buttons [i].SetText (CarerInfoStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
+				}
+				break;
+			}
+			currentState = state; //setting new state
+		}
+
+		private void decideAction(String selectedButton){
+			switch (currentState) {
+			case DEFAULT_HOME_STATE:
+				switch (selectedButton) {
+				case TopLeft:
+					enterKidsZone ();
+					break;
+				case TopRight:
+
+					break;
+				case BottomLeft:
+
+					break;
+
+				case BottomRight:
+					applyState (CARER_INFO_STATE);
+					break;
 				}
 				break;
 			}
 		}
 
+		private void enterKidsZone(){
+			//TODO pin validation of the user
+			applyState (KIDS_ZONE_STATE);
+		}
+
+
 		private void applyButtonListeners(){
 			buttonTopLeft.Click += delegate {
-				applyState (KIDS_ZONE_STATE);
+				decideAction(TopLeft);
 			};
 
 			buttonTopRight.Click += delegate {
-				applyState (DEFAULT_HOME_STATE);
+				decideAction(TopRight);
+			};
+
+			buttonBottomLeft.Click += delegate {
+				decideAction(BottomLeft);
+			};
+
+			buttonBottomRight.Click += delegate {
+				decideAction(BottomRight);
 			};
 		}
 
-		public void applyRandomBubbleMessage(){ //apply a random message to the text view on top of the speech bubble
+		private void applyRandomBubbleMessage(){ //apply a random message to the text view on top of the speech bubble
 			Random randy = new Random ();
 			int temp = randy.Next (1, 101) / 25; //roll random number between 1 (inclusive) and 101 (exclusive)
 			switch (temp) {
@@ -153,7 +240,6 @@ namespace NYASApp
 				speechBubbleText.SetText (Resource.String.BubbleMsg1);
 				break;
 			}
-
 		}
 	}
 }

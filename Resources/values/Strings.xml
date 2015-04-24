@@ -10,6 +10,10 @@
 	<string name="SchoolProblems">School Problems</string>
 	<string name="NotFair">Not fair!</string>
 	<string name="Advice">I need advice</string>
+	<string name="ContactNYAS">Contact NYAS</string>
+	<string name="MoreCarerInfo">More Carer Info</string>
+	<string name="AboutUs">About Us</string>
+	<string name="BecomeACarer">Become a Carer</string>
 	<string name="BubbleMsg1">Welcome to the NYAS App!</string>
 	<string name="BubbleMsg2">Welcome back! How can we help?</string>
 	<string name="BubbleMsg3">Hello there, how are you today?</string>
@@ -29,4 +33,10 @@
 		<item>@string/Advice</item>
 	</string-array>
 
+	<string-array name="CarerInfoStrings">
+		<item>@string/AboutUs</item>
+		<item>@string/MoreCarerInfo</item>
+		<item>@string/BecomeACarer</item>
+		<item>@string/ContactNYAS</item>
+	</string-array>
 </resources>

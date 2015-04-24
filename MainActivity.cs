@@ -11,7 +11,7 @@ using Java.Math;
 
 namespace NYASApp
 {
-	[Activity (Label = "NYAS-App", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "NYAS-App", MainLauncher = true, Icon = "@drawable/NYAS_App_Logo", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 
