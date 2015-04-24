@@ -21,9 +21,14 @@ namespace NYASApp
 		ImageView speechBubble, nyasLogo;
 		TextView speechBubbleText, bottomTextBox;
 
+		const int DEFAULT_TEXT_SIZE = 0;
+		const int BIG_TEXT_SIZE = 1;
+		int currentTextSize = DEFAULT_TEXT_SIZE;
+
 		const int DEFAULT_HOME_STATE = 0;
 		const int KIDS_ZONE_STATE = 1;
 		const int CARER_INFO_STATE = 2;
+		const int LOGIN_STATE = 3;
 		int currentState = DEFAULT_HOME_STATE;
 		int previousState = -1; //used for error catching
 
@@ -41,6 +46,8 @@ namespace NYASApp
 		String[] CarerInfoStrings;
 		int[] CarerInfoStringIDs;
 
+		String[] LoginStrings;
+		int[] LoginStringIDs;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -52,6 +59,7 @@ namespace NYASApp
 			applyState (DEFAULT_HOME_STATE); //initialising default state of the page
 			applyButtonListeners (); //setting up button listeners
 			applyRandomBubbleMessage ();
+			resizeButtonText (DEFAULT_TEXT_SIZE); //resizing the button text size to enforce it, as the xml does not seem to update it correctly
 		}
 
 		private void setupLayouts()
@@ -132,8 +140,7 @@ namespace NYASApp
 			}
 			DefaultStrings = new String[DefaultArray.Length ()]; //String array initialised with the size of the according array
 			DefaultStringIDs = new int[DefaultArray.Length()]; //Int array initialised to the amount of strings within the according array
-
-
+			
 			var KidsZoneArray = Resources.ObtainTypedArray (Resource.Array.KidsZoneScreenStrings);
 			if (KidsZoneArray.Length() != 4) {
 				throw new Exception ("Kids Zone array was not equal to 4. Please fix this in the Strings.xml file."); //this array must be the length of 4!
@@ -148,6 +155,13 @@ namespace NYASApp
 			CarerInfoStrings = new String[CarerInfoArray.Length()];
 			CarerInfoStringIDs = new int[CarerInfoArray.Length()];
 
+			var LoginArray = Resources.ObtainTypedArray (Resource.Array.LoginStrings);
+			if (LoginArray.Length () != 4) {
+				throw new Exception ("Login array was not equal to 4. Please fix this in the Strings.xml file."); //this array must be the length of 4!
+			}
+			LoginStrings = new string[LoginArray.Length()];
+			LoginStringIDs = new int[LoginArray.Length()];
+
 			for (int i = 0; i < 4; i++) { //every array has been tested to have exactly 4 items in it, so we can loop exactly 4 times
 				DefaultStrings [i] = DefaultArray.GetString (i);
 				DefaultStringIDs [i] = DefaultArray.GetResourceId (i, -1); //default value of -1 if resource id was not found
@@ -157,10 +171,18 @@ namespace NYASApp
 
 				CarerInfoStrings [i] = CarerInfoArray.GetString (i);
 				CarerInfoStringIDs [i] = CarerInfoArray.GetResourceId (i, -1);
+
+				LoginStrings [i] = LoginArray.GetString (i);
+				LoginStringIDs [i] = LoginArray.GetResourceId (i, -1);
 			}
 		}
 
 		private void applyState(int state){ //apply the chosen state to this activity
+
+			if (isTextBig ()) { //resize button text to default size if they are big
+				resizeButtonText (DEFAULT_TEXT_SIZE);
+			}
+
 			//determine chosen state
 			switch (state) {
 			case DEFAULT_HOME_STATE:
@@ -180,12 +202,21 @@ namespace NYASApp
 					buttons [i].SetText (CarerInfoStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
 				}
 				break;
+			case LOGIN_STATE:
+				for (int i = 0; i < 4; i++) {
+					buttons [i].SetText (LoginStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
+					resizeButtonText(BIG_TEXT_SIZE); //make all text big
+				}
+				break;
 			}
 			previousState = currentState; //setting previous state
 			currentState = state; //setting new state
 		}
 
-		private void decideAction(String selectedButton){
+		private void decideAction(String selectedButton){ //decide which action the button press will cause
+			//The first part of the decision is based on the current state of the activity.
+			//Nested inside the first switch-case are other switch-cases that check for the selected button.
+			//Knowing the state of the activity and which button has been pressed will decide what happens.
 			switch (currentState) {
 			case DEFAULT_HOME_STATE:
 				switch (selectedButton) {
@@ -226,9 +257,29 @@ namespace NYASApp
 
 		private void enterKidsZone(){
 			//TODO pin validation of the user
-			applyState (KIDS_ZONE_STATE);
+			applyState (LOGIN_STATE);
 		}
 
+		private void resizeButtonText(int mode){ //resize all buttons text
+			switch (mode) {
+			case DEFAULT_TEXT_SIZE: //to default text size
+				foreach (Button b in buttons) {
+					b.SetTextSize (Android.Util.ComplexUnitType.Sp, Resources.GetDimension (Resource.Dimension.ButtonTextSize));
+				}
+				currentTextSize = DEFAULT_TEXT_SIZE;
+				break;
+			case BIG_TEXT_SIZE: //to big text
+				foreach (Button b in buttons) {
+					b.SetTextSize (Android.Util.ComplexUnitType.Sp, Resources.GetDimension (Resource.Dimension.SpecialButtonSize));
+				}
+				currentTextSize = BIG_TEXT_SIZE;
+				break;
+			}
+		}
+
+		private bool isTextBig(){ //is the text big?
+			return currentTextSize == BIG_TEXT_SIZE; //returns true if the current text size is BIG_TEXT_SIZE, otherwise returns false
+		}
 
 		private void applyButtonListeners(){
 			buttonTopLeft.Click += delegate {
