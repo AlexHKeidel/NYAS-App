@@ -346,6 +346,13 @@ namespace NYASApp
 			}
 		}
 
+		/// <summary>
+		/// This method is called by the buttons when in LOGIN_STATE.
+		/// Checks for the current state of the Pin and appends it
+		/// Compares the pin the user has put in 
+		/// </summary>
+		/// <param name="Symbol">Symbol.</param>
+		/// <param name="resID">Res I.</param>
 		private void EnterPin(String Symbol, int resID){
 			//getting the expected UserPin from the file it was saved in
 			if (InputPin.Count > 4) {
