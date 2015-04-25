@@ -43,6 +43,9 @@ namespace NYASApp
 			// aapt resource value: 0x7f070003
 			public const int LoginStrings = 2131165187;
 			
+			// aapt resource value: 0x7f070004
+			public const int MoreInfoStrings = 2131165188;
+			
 			static Array()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -281,8 +284,8 @@ namespace NYASApp
 			// aapt resource value: 0x7f06000c
 			public const int AboutUs = 2131099660;
 			
-			// aapt resource value: 0x7f060012
-			public const int AboutUsDetailed = 2131099666;
+			// aapt resource value: 0x7f060016
+			public const int AboutUsDetailed = 2131099670;
 			
 			// aapt resource value: 0x7f060009
 			public const int Advice = 2131099657;
@@ -290,26 +293,38 @@ namespace NYASApp
 			// aapt resource value: 0x7f06000d
 			public const int BecomeACarer = 2131099661;
 			
-			// aapt resource value: 0x7f060013
-			public const int BubbleMsg1 = 2131099667;
+			// aapt resource value: 0x7f060018
+			public const int BubbleMsg1 = 2131099672;
 			
-			// aapt resource value: 0x7f060014
-			public const int BubbleMsg2 = 2131099668;
+			// aapt resource value: 0x7f060019
+			public const int BubbleMsg2 = 2131099673;
 			
-			// aapt resource value: 0x7f060015
-			public const int BubbleMsg3 = 2131099669;
+			// aapt resource value: 0x7f06001a
+			public const int BubbleMsg3 = 2131099674;
 			
-			// aapt resource value: 0x7f060016
-			public const int BubbleMsg4 = 2131099670;
+			// aapt resource value: 0x7f06001b
+			public const int BubbleMsg4 = 2131099675;
 			
 			// aapt resource value: 0x7f060005
 			public const int CarerInfo = 2131099653;
 			
+			// aapt resource value: 0x7f06001d
+			public const int Confirm = 2131099677;
+			
 			// aapt resource value: 0x7f06000a
 			public const int ContactNYAS = 2131099658;
 			
+			// aapt resource value: 0x7f06001f
+			public const int CorrectPin = 2131099679;
+			
+			// aapt resource value: 0x7f060015
+			public const int Donate = 2131099669;
+			
 			// aapt resource value: 0x7f060003
 			public const int GetInTouch = 2131099651;
+			
+			// aapt resource value: 0x7f060013
+			public const int HowToGetHelp = 2131099667;
 			
 			// aapt resource value: 0x7f060002
 			public const int KidsZone = 2131099650;
@@ -322,6 +337,18 @@ namespace NYASApp
 			
 			// aapt resource value: 0x7f060008
 			public const int NotFair = 2131099656;
+			
+			// aapt resource value: 0x7f06001c
+			public const int Pin = 2131099676;
+			
+			// aapt resource value: 0x7f060020
+			public const int PinConfirmed = 2131099680;
+			
+			// aapt resource value: 0x7f060017
+			public const int PinInstructions = 2131099671;
+			
+			// aapt resource value: 0x7f060014
+			public const int RateOurService = 2131099668;
 			
 			// aapt resource value: 0x7f060007
 			public const int SchoolProblems = 2131099655;
@@ -337,6 +364,12 @@ namespace NYASApp
 			
 			// aapt resource value: 0x7f060011
 			public const int SpecialCharacter4 = 2131099665;
+			
+			// aapt resource value: 0x7f060012
+			public const int WhatsNYAS = 2131099666;
+			
+			// aapt resource value: 0x7f06001e
+			public const int WrongPin = 2131099678;
 			
 			// aapt resource value: 0x7f060001
 			public const int app_name = 2131099649;

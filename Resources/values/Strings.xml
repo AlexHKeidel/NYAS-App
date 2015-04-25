@@ -23,12 +23,24 @@
 	<string name="SpecialCharacter3">ǂ</string>
 	<string name="SpecialCharacter4">þ</string>
 
+	<string name="WhatsNYAS">What\'s NYAS?</string>
+	<string name="HowToGetHelp">How to get help</string>
+	<string name="RateOurService">Rate us!</string>
+	<string name="Donate">Donate</string>
+
 	<string name="AboutUsDetailed">We offer information, advice, advocacy and legal representation to children, young people and vulnerable adults.</string>
+	<string name="PinInstructions">Choose your personal pin from these symbols. Just pick 4 and remember the order!</string>
 
 	<string name="BubbleMsg1">Welcome to the NYAS App!</string>
 	<string name="BubbleMsg2">Welcome back! How can we help?</string>
 	<string name="BubbleMsg3">Hello there, how are you today?</string>
 	<string name="BubbleMsg4">Help me! I\'m trapped in here!</string>
+
+	<string name="Pin">Pin:</string>
+	<string name="Confirm">Confirm:</string>
+	<string name="WrongPin">Incorrect Pin entered</string>
+	<string name="CorrectPin">Correct Pin entered</string>
+	<string name="PinConfirmed">Pin confirmed and saved</string>
 
 	<string-array name="DefaultHomeScreenStrings">
 		<item>@string/KidsZone</item>
@@ -56,5 +68,12 @@
 		<item>@string/SpecialCharacter2</item>
 		<item>@string/SpecialCharacter3</item>
 		<item>@string/SpecialCharacter4</item>
+	</string-array>
+
+	<string-array name="MoreInfoStrings">
+		<item>@string/WhatsNYAS</item>
+		<item>@string/HowToGetHelp</item>
+		<item>@string/RateOurService</item>
+		<item>@string/Donate</item>
 	</string-array>
 </resources>

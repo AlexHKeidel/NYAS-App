@@ -13,6 +13,7 @@ public final class R {
         public static final int DefaultHomeScreenStrings=0x7f070000;
         public static final int KidsZoneScreenStrings=0x7f070001;
         public static final int LoginStrings=0x7f070003;
+        public static final int MoreInfoStrings=0x7f070004;
     }
     public static final class attr {
     }
@@ -76,25 +77,35 @@ public final class R {
     }
     public static final class string {
         public static final int AboutUs=0x7f06000c;
-        public static final int AboutUsDetailed=0x7f060012;
+        public static final int AboutUsDetailed=0x7f060016;
         public static final int Advice=0x7f060009;
         public static final int BecomeACarer=0x7f06000d;
-        public static final int BubbleMsg1=0x7f060013;
-        public static final int BubbleMsg2=0x7f060014;
-        public static final int BubbleMsg3=0x7f060015;
-        public static final int BubbleMsg4=0x7f060016;
+        public static final int BubbleMsg1=0x7f060018;
+        public static final int BubbleMsg2=0x7f060019;
+        public static final int BubbleMsg3=0x7f06001a;
+        public static final int BubbleMsg4=0x7f06001b;
         public static final int CarerInfo=0x7f060005;
+        public static final int Confirm=0x7f06001d;
         public static final int ContactNYAS=0x7f06000a;
+        public static final int CorrectPin=0x7f06001f;
+        public static final int Donate=0x7f060015;
         public static final int GetInTouch=0x7f060003;
+        public static final int HowToGetHelp=0x7f060013;
         public static final int KidsZone=0x7f060002;
         public static final int MoreCarerInfo=0x7f06000b;
         public static final int MoreInfo=0x7f060004;
         public static final int NotFair=0x7f060008;
+        public static final int Pin=0x7f06001c;
+        public static final int PinConfirmed=0x7f060020;
+        public static final int PinInstructions=0x7f060017;
+        public static final int RateOurService=0x7f060014;
         public static final int SchoolProblems=0x7f060007;
         public static final int SpecialCharacter1=0x7f06000e;
         public static final int SpecialCharacter2=0x7f06000f;
         public static final int SpecialCharacter3=0x7f060010;
         public static final int SpecialCharacter4=0x7f060011;
+        public static final int WhatsNYAS=0x7f060012;
+        public static final int WrongPin=0x7f06001e;
         public static final int app_name=0x7f060001;
         public static final int feelingBlue=0x7f060006;
         public static final int hello=0x7f060000;

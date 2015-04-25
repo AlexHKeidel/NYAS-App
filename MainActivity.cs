@@ -9,6 +9,7 @@ using Android.OS;
 
 using Java.Math;
 
+//Created by Alexander Keidel (22397868), last edited 24/04/2015
 namespace NYASApp
 {
 	[Activity (Label = "NYAS-App", MainLauncher = true, Icon = "@drawable/NYAS_App_Logo", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
