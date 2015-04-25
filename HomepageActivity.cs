@@ -40,13 +40,15 @@ namespace NYASApp
 		const int CARER_INFO_STATE = 2;
 		const int LOGIN_STATE = 3;
 		const int MORE_INFO_STATE = 4;
+		const int MY_NYAS_STATE = 5;
 		int currentState = DEFAULT_HOME_STATE;
 		int previousState = -1; //used for error catching
 
 		List<String> UserPin = new List<string>(); //used to store the users actual pin
 		List<String> InputPin = new List<string>(); //used to compare the users input to the actual pin
 		List<String> SecondInputPin = new List<string>(); //used to compare the users second input of the pin before setting it
-		bool pinSet = false;
+		bool PinSet = false;
+		bool PinEntered = false;
 
 		const String TopLeft = "TopLeft";
 		const String TopRight = "TopRight";
@@ -68,6 +70,9 @@ namespace NYASApp
 		String[] MoreInfoStrings;
 		int[] MoreInfoStringIDs;
 
+		String[] MyNyasStrings;
+		int[] MyNyasStringIDs;
+
 		protected override void OnCreate (Bundle bundle)
 		{
 			RequestWindowFeature (WindowFeatures.NoTitle); //removing top bar from the app
@@ -77,7 +82,7 @@ namespace NYASApp
 			SetupResourceStringIDs (); //setting up the string ids associated with each possible state of this activity
 			ApplyState (DEFAULT_HOME_STATE); //initialising default state of the page
 			ApplyButtonListeners (); //setting up button listeners
-			applyRandomBubbleMessage ();
+			ApplyRandomBubbleMessage ();
 			ResizeButtonText (DEFAULT_TEXT_SIZE); //resizing the button text size to enforce it, as the xml does not seem to update it correctly
 		}
 
@@ -131,6 +136,9 @@ namespace NYASApp
 			speechBubble.SetAdjustViewBounds (true); //making the imageview scaleable
 			speechBubble.SetMaxWidth (metrics.WidthPixels / 2); //scale to half the screen size
 			speechBubble.RefreshDrawableState (); //force redraw / refresh
+			speechBubble.Click += delegate {
+				ApplyState (DEFAULT_HOME_STATE); //speech bubble takes you back to the default menu
+			};
 
 			speechBubbleText = (TextView)FindViewById (Resource.Id.speechBubbleText);
 			//setting speech bubble text max height and width
@@ -195,6 +203,13 @@ namespace NYASApp
 			MoreInfoStrings = new string[MoreInfoArray.Length()];
 			MoreInfoStringIDs = new int[MoreInfoArray.Length()];
 
+			var MyNyasArray = Resources.ObtainTypedArray (Resource.Array.MyNYASStrings);
+			if (MyNyasArray.Length () != 4) {
+				throw new Exception ("Login array was not equal to 4. Please fix this in the Strings.xml file."); //this array must be the length of 4!
+			}
+			MyNyasStrings = new string[MyNyasArray.Length()];
+			MyNyasStringIDs = new int[MyNyasArray.Length()];
+
 			for (int i = 0; i < 4; i++) { //every array has been tested to have exactly 4 items in it, so we can loop exactly 4 times
 				DefaultStrings [i] = DefaultArray.GetString (i);
 				DefaultStringIDs [i] = DefaultArray.GetResourceId (i, -1); //default value of -1 if resource id was not found
@@ -210,6 +225,9 @@ namespace NYASApp
 
 				MoreInfoStrings [i] = MoreInfoArray.GetString (i);
 				MoreInfoStringIDs [i] = MoreInfoArray.GetResourceId (i, -1);
+
+				MyNyasStrings [i] = MyNyasArray.GetString (i);
+				MyNyasStringIDs [i] = MyNyasArray.GetResourceId (i, -1);
 			}
 		}
 
@@ -240,15 +258,25 @@ namespace NYASApp
 				}
 				break;
 			case LOGIN_STATE:
-				for (int i = 0; i < 4; i++) {
-					buttons [i].SetText (LoginStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
-					ResizeButtonText(BIG_TEXT_SIZE); //make all text big
-					UpdateBottomTextBox(LOGIN_INSTRUCTIONS_BOX_CONTENT); //update the bottom text with the instructions for the login state
+				if (PinEntered) { //if the pin was already entered, just go straight to MY_NYAS_STATE
+					ApplyState (MY_NYAS_STATE);
+					return;
+				} else {
+					for (int i = 0; i < 4; i++) {
+						buttons [i].SetText (LoginStringIDs [i]); //changing the text of the buttons to the string ids associated with this state
+						ResizeButtonText (BIG_TEXT_SIZE); //make all text big
+						UpdateBottomTextBox (PIN_COLON_BOX_CONTENT); //update the bottom text with "Pin:" ready for the pin to be put in
+					}
 				}
 				break;
 			case MORE_INFO_STATE:
 				for (int i = 0; i < 4; i++) {
 					buttons [i].SetText (MoreInfoStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
+				}
+				break;
+			case MY_NYAS_STATE:
+				for (int i = 0; i < 4; i++) {
+					buttons [i].SetText (MyNyasStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
 				}
 				break;
 			}
@@ -266,7 +294,7 @@ namespace NYASApp
 			case DEFAULT_HOME_STATE:
 				switch (selectedButton) {
 				case TopLeft:
-					EnterKidsZone ();
+					ApplyState (LOGIN_STATE);
 					break;
 				case TopRight:
 
@@ -318,19 +346,43 @@ namespace NYASApp
 			}
 		}
 
-		private void EnterKidsZone(){
-			//TODO pin validation of the user
-			ApplyState (LOGIN_STATE);
+		private void EnterPin(String Symbol, int resID){
+			//getting the expected UserPin from the file it was saved in
+			if (InputPin.Count > 4) {
+				InputPin.Clear (); //something went wrong and the pin is greater than it should be.
+			}
+
+			InputPin.Add (Symbol); //add the given Symbol to the InputPin
+			AppendBottomTextBox (Symbol);
+
+			if (InputPin.Count == 4) { //pin has been entered
+				if (PinSet) { //if the pin has alraedy been set
+					if (ComparePins (InputPin, UserPin)) { //CORRECT PIN ENTERED
+						PinEntered = true;
+						UpdateBottomTextBox (CORRECT_PIN_BOX_CONTENT);
+						ApplyState (MY_NYAS_STATE);
+					} else { //INCORRECT PIN ENTERED
+						UpdateBottomTextBox (INCORRECT_PIN_BOX_CONTENT);
+						InputPin.Clear ();
+					}
+				} else { //the pin has not already been set
+					clonePin(InputPin, UserPin); //clone the input pin into the userpin, you can not say UserPin = InputPin, as this will create a pointer refernce and update the UserPin whenever Inputpin is changed. This leads to any pin being accepted as correct.
+					PinSet = true;
+					UpdateBottomTextBox (PIN_CONFIRMED_BOX_CONTENT);
+					InputPin.Clear ();
+				}
+			}
 		}
 
-		private void EnterPin(String Symbol, int resID){
-			if (pinSet) { //the pin is already set
+			/** REWORKING THIS LOGIC
+			if (PinSet) { //the pin is already set
 				if (InputPin.Count >= 3) { //the user has put in 4 characters
 					InputPin.Add (Symbol); //add the given Symbol to the InputPin;
 					AppendBottomTextBox (Symbol);
 					//Compare the Input Pin to the expected values in Userpin
 					if (ComparePins(InputPin, UserPin)) { //CORRECT PIN
 						UpdateBottomTextBox(CORRECT_PIN_BOX_CONTENT);
+						ApplyState (KIDS_ZONE_STATE); //go to kids zone
 					} else { //INCORRECT PIN
 						InputPin.Clear ();
 						UpdateBottomTextBox (INCORRECT_PIN_BOX_CONTENT); //Tell the user in the bottom box that they entered an incorrect pin
@@ -339,15 +391,13 @@ namespace NYASApp
 					InputPin.Add (Symbol); //add the given Symbol to the InputPin;
 					AppendBottomTextBox (Symbol);
 				}
-			} else if (InputPin.Count >= 3) { //the user already entered their first part of the verification process
-				InputPin.Add (Symbol); //add the given Symbol to the InputPin;
-				AppendBottomTextBox (Symbol);
+			} else if (InputPin.Count >= 4) { //the user already entered their first part of the verification process
 				if (SecondInputPin.Count >= 3) { //they also entered their second part of the verification process
 					SecondInputPin.Add (Symbol); //adding Symbol to the SecondInputPin
 					AppendBottomTextBox (Symbol);
 					if (ComparePins(InputPin, SecondInputPin)) { //if they are identical
 						UserPin = InputPin; //setting UserPin
-						pinSet = true; //pin has been set
+						PinSet = true; //pin has been set
 						UpdateBottomTextBox (PIN_CONFIRMED_BOX_CONTENT); //update the box with the message that the pin has been confirmed and saved
 						//TODO Save the pin inside UserPin in the shared preferences or a text file or other
 					} else { //The two pins are NOT identical, reset them and promt the user
@@ -368,8 +418,8 @@ namespace NYASApp
 				}
 				InputPin.Add (Symbol); //add the Symbol to the pin
 				AppendBottomTextBox (Symbol);
-			}
-		}
+			} 
+		} */
 
 		private void ResizeButtonText(int mode){ //resize all buttons text
 			switch (mode) {
@@ -389,10 +439,17 @@ namespace NYASApp
 		}
 
 		private bool ComparePins(List<String> l1, List<String> l2){ //compare two lists of strings for their content
-			for (int i = 0; i > l1.Count; i++) { //taking the size of the first list and assuming they are the same size
+			for (int i = 0; i < l1.Count; i++) { //taking the size of the first list and assuming they are the same size
 				if(!l1 [i].Equals(l2[i])){ return false; } //if the elements are not euqal return false
+				Console.WriteLine(l1[i] + l2[i]);
 			}
 			return true; //the loop has run through, return true
+		}
+
+		private void clonePin(List<String> Origin, List<String> Destination){
+			foreach (String s in Origin) {
+				Destination.Add (s);
+			}
 		}
 
 		private void UpdateBottomTextBox(int resID){ //update the text box with a resource id
@@ -430,7 +487,7 @@ namespace NYASApp
 			};
 		}
 
-		private void applyRandomBubbleMessage(){ //apply a random message to the text view on top of the speech bubble
+		private void ApplyRandomBubbleMessage(){ //apply a random message to the text view on top of the speech bubble
 			Random randy = new Random ();
 			int temp = randy.Next (1, 101) / 25; //roll random number between 1 (inclusive) and 101 (exclusive)
 			switch (temp) {

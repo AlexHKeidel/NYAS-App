@@ -28,6 +28,11 @@
 	<string name="RateOurService">Rate us!</string>
 	<string name="Donate">Donate</string>
 
+	<string name="MyNYAS">My NYAS</string>
+	<string name="MyAppointments">My Appointments</string>
+	<string name="ContactUs">Contact us</string>
+	<string name="Options">Options</string>
+
 	<string name="AboutUsDetailed">We offer information, advice, advocacy and legal representation to children, young people and vulnerable adults.</string>
 	<string name="PinInstructions">Choose your personal pin from these symbols. Just pick 4 and remember the order!</string>
 
@@ -75,5 +80,12 @@
 		<item>@string/HowToGetHelp</item>
 		<item>@string/RateOurService</item>
 		<item>@string/Donate</item>
+	</string-array>
+
+	<string-array name="MyNYASStrings">
+		<item>@string/MyNYAS</item>
+		<item>@string/MyAppointments</item>
+		<item>@string/ContactUs</item>
+		<item>@string/Options</item>
 	</string-array>
 </resources>
