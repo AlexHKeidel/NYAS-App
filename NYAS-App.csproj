@@ -48,6 +48,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HomepageActivity.cs" />
+    <Compile Include="CalendarActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -78,6 +79,8 @@
     <AndroidResource Include="Resources\drawable-hdpi\NYAS_App_Logo.png" />
     <AndroidResource Include="Resources\drawable-hdpi\rectangle_peach_gradient.xml" />
     <AndroidResource Include="Resources\values\dimensions.xml" />
+    <AndroidResource Include="Resources\layout\Calendar_Activity_Layout.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

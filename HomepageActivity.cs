@@ -343,6 +343,23 @@ namespace NYASApp
 					break;
 				}
 				break;
+			case MY_NYAS_STATE:
+				switch (selectedButton) {
+				case TopLeft:
+
+					break;
+				case TopRight:
+					StartCalendarActivity ();
+					break;
+				case BottomLeft:
+
+					break;
+
+				case BottomRight:
+
+					break;
+				}
+				break;
 			}
 		}
 
@@ -523,6 +540,10 @@ namespace NYASApp
 			} else {
 			ApplyState (previousState); //go to the previous state of the application
 			}
+		}
+
+		private void StartCalendarActivity(){
+			StartActivity (typeof(CalendarActivity)); //starting a new calendar activity
 		}
 	}
 }

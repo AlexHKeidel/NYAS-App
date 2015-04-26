@@ -29,5 +29,7 @@ G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\drawable-hdpi\icon_example.
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\drawable-hdpi\nyas_app_logo.png
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\drawable-hdpi\rectangle_peach_gradient.xml
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\values\dimensions.xml
+G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\layout\calendar_activity_layout.xml
+G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\values\styles.xml
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\R.cs.flag
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\uploadflags.txt

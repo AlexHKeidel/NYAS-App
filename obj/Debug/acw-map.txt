@@ -1,2 +1,3 @@
 NYASApp.MainActivity;nyasapp.MainActivity
 NYASApp.HomepageActivity;nyasapp.HomepageActivity
+NYASApp.CalendarActivity;nyasapp.CalendarActivity

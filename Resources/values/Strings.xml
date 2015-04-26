@@ -3,6 +3,8 @@
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">NYAS-App</string>
 
+	<string name="MakeAppointment">Make Appointment</string>
+
 	<string name="KidsZone">Kids Zone</string>
 	<string name="GetInTouch">Get in Touch</string>
 	<string name="MoreInfo">More Info</string>

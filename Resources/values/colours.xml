@@ -17,4 +17,5 @@
 	<color name="greenGradientEnd">#4bb54b</color>
 	<color name="purpleGradientStart">#d057cd</color>
 	<color name="purpleGradientEnd">#c152bd</color>
+	<color name="calendarBackground">#99FF6600</color>
 </resources>
