@@ -1,1 +1,1 @@
-<resources><style name="calendarTextStyle"><item name="android:textSize">20dp</item><item name="android:textColor">@color/greenGradientEnd</item></style></resources>
+<resources><style name="calendarTextStyle"><item name="android:textSize">15dp</item><item name="android:textColor">@color/greenGradientEnd</item></style></resources>
