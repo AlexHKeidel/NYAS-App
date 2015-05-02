@@ -1,3 +1,4 @@
+G:\Xamarin Workspace\NYAS-App\NYAS-App\bin\Debug\NYAS-App.xml
 G:\Xamarin Workspace\NYAS-App\NYAS-App\bin\Debug\NYAS-App.dll
 G:\Xamarin Workspace\NYAS-App\NYAS-App\bin\Debug\NYAS-App.pdb
 G:\Xamarin Workspace\NYAS-App\NYAS-App\bin\Debug\NYAS-App.dll.mdb

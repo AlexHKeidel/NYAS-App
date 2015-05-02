@@ -82,6 +82,10 @@ namespace NYASApp
 		String[] OptionStrings;
 		int[] OptionStringIDs;
 
+		/// <summary>
+		/// OnCreate used by activity when it is first created.
+		/// </summary>
+		/// <param name="bundle">Bundle.</param>
 		protected override void OnCreate (Bundle bundle)
 		{
 			RequestWindowFeature (WindowFeatures.NoTitle); //removing top bar from the app

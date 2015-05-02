@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NYAS-App</name>
+    </assembly>
+    <members>
+        <member name="T:NYASApp.MainActivity">
+            <summary>
+            Main activity or Splash screen shown when the app is first started.
+            </summary>
+        </member>
+        <member name="M:NYASApp.MainActivity.OnCreate(Android.OS.Bundle)">
+            <summary>
+            OnCreate used by activity when it is first created.
+            </summary>
+            <param name="bundle">Bundle.</param>
+        </member>
+        <member name="M:NYASApp.MainActivity.startHomepageActivity">
+            <summary>
+            Starts the homepage activity.
+            </summary>
+        </member>
+        <member name="T:NYASApp.HomepageActivity">
+            <summary>
+            Homepage activity shown after entering through the splash screen.
+            </summary>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.OnCreate(Android.OS.Bundle)">
+            <summary>
+            OnCreate used by activity when it is first created.
+            </summary>
+            <param name="bundle">Bundle.</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.SetupLayouts">
+            <summary>
+            Sets up all the layouts with the help of displaymetrics that interrogates the screen resolution of the used device.
+            </summary>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.ConvertPixelsToDp(System.Single)">
+            <summary>
+            Converts the pixels to density pixels (dp).
+            </summary>
+            <returns>The pixels in dp</returns>
+            <param name="pixelValue">Pixel value.</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.SetupResourceStringIDs">
+            <summary>
+            Setups the resource string I ds.
+            Getting the relevant array (of Strings) from the Strings.xml file.
+            Saving the resource ids of the Strings contained within the arrays in their respective integer array.
+            This is done so the activity can remember or interrogate its on state istead of just changing the strings within the buttons.
+            </summary>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.ApplyState(System.Int32)">
+            <summary>
+            Applies the specified state to this activity.
+            The previous and current state values will also be updated.
+            </summary>
+            <param name="state">Specified state</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.DecideAction(System.String)">
+            <summary>
+            Decides the action to be taken when a specific button has been pressed.
+            The first part of the decision is based on the current state of the activity.
+            Nested inside the first switch-case are other switch-cases that check for the selected button.
+            Knowing the state of the activity and which button has been pressed will decide what happens.
+            You can not access the current state of the button class via for example GetText(), such a method does not exist.
+            This means that this activity works around this by assigning const values to the state of the button or the location to the button, see near class declaration.
+            </summary>
+            <param name="selectedButton">Selected button.</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.EnterPin(System.String,System.Int32)">
+            <summary>
+            This method is called by the buttons when in LOGIN_STATE.
+            Checks for the current state of the Pin and appends it
+            Compares the pin the user has put in 
+            </summary>
+            <param name="Symbol">Symbol.</param>
+            <param name="resID">Res I.</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.ResizeButtonText(System.Int32)">
+            <summary>
+            Resizes the button text.
+            </summary>
+            <param name="mode">Mode to be set</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.ComparePins(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Compares to list of strings if each element is identical.
+            This method presumes that the second list is the same size as the first.
+            Make sure the lists are the same length.
+            </summary>
+            <returns><c>true</c> if all ements are identical<c>false</c> if any element is not identical </returns>
+            <param name="l1">First list of comparison</param>
+            <param name="l2">Second list of comparison</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.ReturnPinAsString(System.Collections.Generic.List{System.String})">
+            <summary>
+            Returns the pin as string.
+            </summary>
+            <returns>The pin as string.</returns>
+            <param name="Pin">Pin as list of strings</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.ReturnPinAsList(System.String)">
+            <summary>
+            Returns the pin as list.
+            </summary>
+            <returns>The pin as list.</returns>
+            <param name="Pin">Pin as string</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.CheckAndSetPin">
+            <summary>
+            Checks if the pin exists and if it does it will be set.
+            </summary>
+            <returns><c>true</c>, if and set pin was checked, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.ClonePin(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Clones the pin from one list of strings to another
+            </summary>
+            <param name="Origin">Origin that is copied from</param>
+            <param name="Destination">Destination that is copied to</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.UpdateBottomTextBox(System.Int32)">
+            <summary>
+            Updates the bottom text box.
+            </summary>
+            <param name="resID">Res ID.</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.AppendBottomTextBox(System.String)">
+            <summary>
+            Appends the bottom text box.
+            </summary>
+            <param name="text">Text as String</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.IsBottomBoxContent(System.Int32)">
+            <summary>
+            Determines the state of the bottom box content and returns true if the passed value is the current state
+            </summary>
+            <returns><c>true</c> if bottom box content is identical to the specified resID; otherwise, <c>false</c>.</returns>
+            <param name="resID">Res I.</param>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.IsTextBig">
+            <summary>
+            Determines whether or not the is text big.
+            </summary>
+            <returns><c>true</c> if this instance is text big; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.ApplyButtonListeners">
+            <summary>
+            Applies the button listeners.
+            </summary>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.ApplyRandomBubbleMessage">
+            <summary>
+            Applies the random bubble message.
+            </summary>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.OnBackPressed">
+            <summary>
+            Called when the activity has detected the user's press of the back
+             key.
+            This is overriden so that only when the screen is in default state it will quit the app.
+            Otherwise it will return to the previous state.
+            </summary>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.StartCalendarActivity">
+            <summary>
+            Starts the calendar activity.
+            </summary>
+        </member>
+        <member name="T:NYASApp.CalendarActivity">
+            <summary>
+            Calendar activity used to create appointments by selecting a date on the given calendar and then picking a time with the help of a time-picker dialogue.
+            </summary>
+        </member>
+        <member name="M:NYASApp.CalendarActivity.OnCreate(Android.OS.Bundle)">
+            <summary>
+            OnCreate used by activity when it is first created.
+            </summary>
+            <param name="bundle">Bundle.</param>
+        </member>
+        <member name="M:NYASApp.CalendarActivity.SetupResources">
+            <summary>
+            Sets up the relevant resources for this activity, including all views and classes.
+            </summary>
+        </member>
+        <member name="M:NYASApp.CalendarActivity.SetupLayout">
+            <summary>
+            Sets up the layout for this activity.
+            This uses display metrics to determine the screen resolution of the used device.
+            </summary>
+        </member>
+        <member name="M:NYASApp.CalendarActivity.SetupButtonListeners">
+            <summary>
+            Sets up all button listeners for this activity.
+            </summary>
+        </member>
+        <member name="M:NYASApp.CalendarActivity.ConvertDate">
+            <summary>
+            Converts date from the Calendar and returns a formatted String.
+            Format: DD/MM/YYYY
+            </summary>
+            <returns>String in the defined short format.</returns>
+        </member>
+        <member name="M:NYASApp.CalendarActivity.OnCreateDialog(System.Int32)">
+            <param name="id">To be added.</param>
+            <summary>
+            Overriden method used to distinguish between different dialogue types.
+            Currently only one type is used but this method could be extended if other dialogues were to be added.
+            </summary>
+            <returns>To be added.</returns>
+        </member>
+        <member name="M:NYASApp.CalendarActivity.TimePickerCallback(System.Object,Android.App.TimePickerDialog.TimeSetEventArgs)">
+            <summary>
+            Callback method for the time picker dialogue.
+            This will only be called if the user presses "Set" on the dialogue.
+            If the user presses "Cancel" nothing will happen and the appointment will not be set.
+            </summary>
+            <param name="sender">Sender.</param>
+            <param name="e">E.</param>
+        </member>
+        <member name="T:NYASApp.FileManager">
+            <summary>
+            File manager created to take care of any file reading or writing.
+            This custom class uses a FileStream with the apps specific file location.
+            A StreamWriter is used to write to files.
+            A StreamReader is used to read from files.
+            </summary>
+        </member>
+        <member name="M:NYASApp.FileManager.WriteAppointment(System.String)">
+            <summary>
+            Writes the appointment.
+            </summary>
+            <param name="text">Appointment as string, formatted as DD/MM/YYYY,HH:MM-</param>
+        </member>
+        <member name="M:NYASApp.FileManager.OverwriteAppointments(System.String)">
+            <summary>
+            Overwrites the appointments.
+            </summary>
+            <param name="text">Appointments with comma separators</param>
+        </member>
+        <member name="M:NYASApp.FileManager.ReadAppointments">
+            <summary>
+            Reads the appointments.
+            </summary>
+            <returns>All appointments in a string, formatted as DD/MM/YYYY,HH:MM-</returns>
+        </member>
+        <member name="M:NYASApp.FileManager.WritePin(System.String)">
+            <summary>
+            Writes the pin to its file.
+            </summary>
+            <param name="Pin">String containing 4 symbol pin</param>
+        </member>
+        <member name="M:NYASApp.FileManager.DeletePin">
+            <summary>
+            Deletes the pin.
+            </summary>
+        </member>
+        <member name="M:NYASApp.FileManager.ReadPin">
+            <summary>
+            Reads the pin saved in the pin directory within the apps local storage on the device.
+            </summary>
+            <returns>The pin as String</returns>
+        </member>
+        <member name="T:NYASApp.AppointmentsActivity">
+            <summary>
+            Appointments activity displaying all the appointments the user has saved in the Appointments.txt file inside the apps resources on the users device.
+            </summary>
+        </member>
+        <member name="M:NYASApp.AppointmentsActivity.OnCreate(Android.OS.Bundle)">
+            <summary>
+            OnCreate used by activity when it is first created.
+            </summary>
+            <param name="bundle">Bundle.</param>
+        </member>
+        <member name="M:NYASApp.AppointmentsActivity.SetupResources">
+            <summary>
+            Sets up the relevant resources for this activity, including all views and classes.
+            </summary>
+        </member>
+        <member name="M:NYASApp.AppointmentsActivity.SplitAppointments(System.String)">
+            <summary>
+            Splits the given string at commas
+            </summary>
+            <returns>The appointments.</returns>
+            <param name="Input">Input String</param>
+        </member>
+        <member name="M:NYASApp.AppointmentsActivity.SetupListView">
+            <summary>
+            Sets up the list view displaying all appointments by adding them to the ArrayAdapter
+            </summary>
+        </member>
+    </members>
+</doc>

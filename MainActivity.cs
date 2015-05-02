@@ -12,10 +12,16 @@ using Java.Math;
 //Created by Alexander Keidel (22397868), last edited 24/04/2015
 namespace NYASApp
 {
+	/// <summary>
+	/// Main activity or Splash screen shown when the app is first started.
+	/// </summary>
 	[Activity (Label = "NYAS-App", MainLauncher = true, Icon = "@drawable/NYAS_App_Logo", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
-
+		/// <summary>
+		/// OnCreate used by activity when it is first created.
+		/// </summary>
+		/// <param name="bundle">Bundle.</param>
 		protected override void OnCreate (Bundle bundle)
 		{
 			RequestWindowFeature (WindowFeatures.NoTitle); //removing top bar from the app
@@ -42,6 +48,9 @@ namespace NYASApp
 			// and attach an event to it
 		}
 
+		/// <summary>
+		/// Starts the homepage activity.
+		/// </summary>
 		private void startHomepageActivity(){
 			StartActivity (typeof(HomepageActivity)); //start a new HomepageActivity
 			Finish ();
