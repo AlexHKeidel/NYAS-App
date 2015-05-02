@@ -268,7 +268,8 @@ namespace NYASApp
 		}
 
 		/// <summary>
-		/// Applies the specified state to this activity
+		/// Applies the specified state to this activity.
+		/// The previous and current state values will also be updated.
 		/// </summary>
 		/// <param name="state">Specified state</param>
 		private void ApplyState(int state){ //apply the chosen state to this activity

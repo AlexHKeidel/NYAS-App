@@ -46,6 +46,18 @@ namespace NYASApp
 		}
 
 		/// <summary>
+		/// Overwrites the appointments.
+		/// </summary>
+		/// <param name="text">Appointments with comma separators</param>
+		public void OverwriteAppointments(String text){
+			sw = new StreamWriter (AppointmentDirectory, false); //do not append but just rewrite the file
+			sw.Write(text);
+			sw.Flush ();
+			sw.Close ();
+			sw.Dispose ();
+		}
+
+		/// <summary>
 		/// Reads the appointments.
 		/// </summary>
 		/// <returns>All appointments in a string, formatted as DD/MM/YYYY,HH:MM-</returns>
@@ -60,11 +72,10 @@ namespace NYASApp
 			sr.Close (); //closing reader
 			sr.Dispose (); //disposing reader
 			fr.Dispose (); //disposing file
+			if(temp.Equals("")){
+				return "No Appointments";
+			}
 			return temp; //returning the read string
-		}
-
-		public void destroyFile(){
-			
 		}
 
 		/// <summary>
@@ -85,6 +96,9 @@ namespace NYASApp
 			fr.Dispose (); //disposing of file
 		}
 
+		/// <summary>
+		/// Deletes the pin.
+		/// </summary>
 		public void DeletePin(){
 			sw = new StreamWriter (PinDirectory, false); //new stream writer with the file directory and telling it not to append (false)!
 			sw.Write(""); //writing empty line to the file that overrides the pin
@@ -93,6 +107,10 @@ namespace NYASApp
 			sw.Dispose (); //disposing of writer
 		}
 
+		/// <summary>
+		/// Reads the pin saved in the pin directory within the apps local storage on the device.
+		/// </summary>
+		/// <returns>The pin as String</returns>
 		public String ReadPin(){
 			try{
 			fr = new FileStream (PinDirectory, FileMode.Open); //open mode for reading files

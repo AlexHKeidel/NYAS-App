@@ -14,6 +14,9 @@ using Android.Widget;
 //Created by Alexander Keidel (22397868), last edited 02/05/2015
 namespace NYASApp
 {
+	/// <summary>
+	/// Calendar activity used to create appointments by selecting a date on the given calendar and then picking a time with the help of a time-picker dialogue.
+	/// </summary>
 	[Activity (Label = "CalendarActivity", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]			
 	public class CalendarActivity : Activity
 	{
@@ -62,6 +65,9 @@ namespace NYASApp
 			dateText.Alpha = 0.75f; //making the calendar slightly transparent (75% opaque or 25% transparent)
 		}
 
+		/// <summary>
+		/// Sets up all button listeners for this activity.
+		/// </summary>
 		private void SetupButtonListeners(){ 
 			MakeAppointmentButton.Click += (object sender, EventArgs e) => ShowDialog(TIME_DIALOG_ID);
 			ViewAppointmentsButton.Click += delegate {
@@ -81,6 +87,12 @@ namespace NYASApp
 			return converter.ToShortDateString();
 		}
 
+		/// <param name="id">To be added.</param>
+		/// <summary>
+		/// Overriden method used to distinguish between different dialogue types.
+		/// Currently only one type is used but this method could be extended if other dialogues were to be added.
+		/// </summary>
+		/// <returns>To be added.</returns>
 		protected override Dialog OnCreateDialog (int id)
 		{
 			if (id == TIME_DIALOG_ID)
@@ -88,6 +100,13 @@ namespace NYASApp
 			return null;
 		}
 
+		/// <summary>
+		/// Callback method for the time picker dialogue.
+		/// This will only be called if the user presses "Set" on the dialogue.
+		/// If the user presses "Cancel" nothing will happen and the appointment will not be set.
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
 		private void TimePickerCallback (object sender, TimePickerDialog.TimeSetEventArgs e)
 		{
 			hour = e.HourOfDay;

@@ -21,11 +21,12 @@ namespace NYASApp
 	public class AppointmentsActivity : Activity
 	{
 		ListView MyListView;
-		ArrayAdapter ad;
+		ArrayAdapter MyArrayAdapter;
 
 		FileManager myFileManager;
-		String Directory, Splitter;
+		String Directory;
 		String [] Appointments;
+		List<String> AppointmentList = new List<string>();
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -44,24 +45,73 @@ namespace NYASApp
 			MyListView = (ListView)FindViewById (Resource.Id.appointmentListView);
 			Directory = BaseContext.FilesDir.AbsolutePath;
 			myFileManager = new FileManager (Directory);
-			Splitter = myFileManager.ReadAppointments ();
-			Appointments = Splitter.Split (',');
-			ad = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1); //see http://stackoverflow.com/questions/21953965/listview-with-dynamic-strings-coded-in-c-sharp-xamarin-mono
-			MyListView.Adapter = ad;
+			Appointments = SplitAppointments (myFileManager.ReadAppointments ()); //default value for the appointments
+			MyArrayAdapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1); //see http://stackoverflow.com/questions/21953965/listview-with-dynamic-strings-coded-in-c-sharp-xamarin-mono
+			MyListView.Adapter = MyArrayAdapter;
+			MyListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => StartCustomDialog(e.Position, MyListView.GetItemAtPosition(e.Position).ToString()); //adding button listener that returns the id of the clicked item
+		}
+
+		/// <summary>
+		/// Splits the given string at commas
+		/// </summary>
+		/// <returns>The appointments.</returns>
+		/// <param name="Input">Input String</param>
+		private String [] SplitAppointments(String Input){
+			return  Input.Split (',');
 		}
 
 		/// <summary>
 		/// Sets up the list view displaying all appointments by adding them to the ArrayAdapter
 		/// </summary>
 		private void SetupListView(){
-			for (int i = 0; i < Appointments.Length; i++) {
-				try{
-				if ((i & 1) == 0) { //index is an even number since the first bit is 0
-					ad.Add(Appointments[i] + " at " + Appointments [i + 1]);
-					}
-				} catch (IndexOutOfRangeException){
+			for (int i = 0; i < (Appointments.Length - 1); i++) {
+				if (i % 2 == 0) { //the index is even
+					MyArrayAdapter.Add(Appointments[i] + " at " + Appointments[i + 1]);
 				}
 			}
+		}
+
+		private void StartCustomDialog(int position, String appointment){
+			AlertDialog.Builder ad = new AlertDialog.Builder (this);
+			ad.SetMessage (appointment + "\nChoose an option.");
+			ad.SetCancelable (true);
+			ad.SetPositiveButton("Delete", delegate {
+				DeleteEntry(position);
+			});
+			ad.SetNegativeButton ("Edit", delegate {
+				Console.WriteLine ("Editing not currently supported");
+				Toast.MakeText(this, "Editing not currently supported", ToastLength.Long).Show();
+			});
+			ad.Show ();
+		}
+
+		private void DeleteEntry(int position){
+			Console.WriteLine ("Delete item at position " + position);
+			AppointmentList.Clear ();
+			foreach (String s in Appointments) {
+				AppointmentList.Add (s);
+				Console.WriteLine (s);
+			}
+
+			AppointmentList.RemoveAt (position * 2); //removing the two items that are at the position of the selected item in the list (i.e. 4 and 5, corressponding to item index 2)
+			AppointmentList.RemoveAt (position * 2); //the first removed item shifts the list so that you can just remove the same index again, as the second part (time) will have moved to that position in the list.
+
+			Appointments = AppointmentList.ToArray (); //updating the appointments string array with the updated format
+			String temp = "";
+			foreach (String s in Appointments) { //adding all strings into a single string and comma separating them
+				if(s.Equals("")){
+					//do nothing, empty record
+					//these seem to appear because of the line that adds " at " between the date and the time of the appointment record
+				} else {
+				temp += s + ",";
+				Console.WriteLine ("s = " + s);
+				}
+			}
+			Console.WriteLine ("new appointments " + temp);
+
+			myFileManager.OverwriteAppointments (temp); //overwrite the appointments file
+			MyArrayAdapter.Clear (); //clearing the array adapter
+			SetupListView (); //repopulating the array adapter
 		}
 	}
 }
