@@ -3,6 +3,7 @@ G:\Xamarin Workspace\NYAS-App\NYAS-App\bin\Debug\NYAS-App.pdb
 G:\Xamarin Workspace\NYAS-App\NYAS-App\bin\Debug\NYAS-App.dll.mdb
 G:\Xamarin Workspace\NYAS-App\NYAS-App\bin\Debug\NYAS_App.NYAS_App.apk
 G:\Xamarin Workspace\NYAS-App\NYAS-App\bin\Debug\NYAS_App.NYAS_App-Signed.apk
+G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\NYAS-App.csprojResolveAssemblyReference.cache
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\NYAS-App.dll
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\NYAS-App.pdb
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\android\bin\NYAS_App.NYAS_App.apk
@@ -32,6 +33,6 @@ G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\values\dimensions.xml
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\layout\calendar_activity_layout.xml
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\values\styles.xml
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\layout\appointments_activity_layout.xml
+G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\drawable-hdpi\alternative_orange_gradient.xml
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\R.cs.flag
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\uploadflags.txt
-G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\drawable-hdpi\alternative_orange_gradient.xml

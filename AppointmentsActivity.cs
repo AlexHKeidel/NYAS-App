@@ -11,9 +11,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-//Created by Alexander Keidel (22397868), last edited 28/04/2015
+//Created by Alexander Keidel (22397868), last edited 02/05/2015
 namespace NYASApp
 {
+	/// <summary>
+	/// Appointments activity displaying all the appointments the user has saved in the Appointments.txt file inside the apps resources on the users device.
+	/// </summary>
 	[Activity (Label = "AppointmentsActivity", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]			
 	public class AppointmentsActivity : Activity
 	{
@@ -23,6 +26,7 @@ namespace NYASApp
 		FileManager myFileManager;
 		String Directory, Splitter;
 		String [] Appointments;
+
 		protected override void OnCreate (Bundle bundle)
 		{
 			RequestWindowFeature (WindowFeatures.NoTitle); //removing top bar from the app
@@ -46,6 +50,9 @@ namespace NYASApp
 			MyListView.Adapter = ad;
 		}
 
+		/// <summary>
+		/// Sets up the list view displaying all appointments by adding them to the ArrayAdapter
+		/// </summary>
 		private void SetupListView(){
 			for (int i = 0; i < Appointments.Length; i++) {
 				try{
@@ -58,4 +65,3 @@ namespace NYASApp
 		}
 	}
 }
-

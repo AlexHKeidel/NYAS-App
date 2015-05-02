@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-//Created by Alexander Keidel (22397868), last edited 28/04/2015
+//Created by Alexander Keidel (22397868), last edited 02/05/2015
 namespace NYASApp
 {
 	[Activity (Label = "CalendarActivity", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]			
@@ -50,11 +50,15 @@ namespace NYASApp
 			MyFileManager = new FileManager (directory);
 		}
 
+		/// <summary>
+		/// Sets up the layout for this activity.
+		/// This uses display metrics to determine the screen resolution of the used device.
+		/// </summary>
 		private void SetupLayout(){
 			var metrics = Resources.DisplayMetrics; //getting the display metrics (resolution) of the devices screen
 			Calendar.SetPadding(15,15,15, (metrics.HeightPixels * 1/3));
 			var dateText = Calendar.GetChildAt (0); //position of the actual background of the calendar
-			dateText.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.alternative_orange_gradient));
+			dateText.Background = Resources.GetDrawable (Resource.Drawable.alternative_orange_gradient);
 			dateText.Alpha = 0.75f; //making the calendar slightly transparent (75% opaque or 25% transparent)
 		}
 
@@ -81,7 +85,6 @@ namespace NYASApp
 		{
 			if (id == TIME_DIALOG_ID)
 				return new TimePickerDialog (this, TimePickerCallback, hour, minute, false);
-
 			return null;
 		}
 
