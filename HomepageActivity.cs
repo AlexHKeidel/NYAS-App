@@ -46,6 +46,7 @@ namespace NYASApp
 		const int LOGIN_STATE = 3;
 		const int MORE_INFO_STATE = 4;
 		const int MY_NYAS_STATE = 5;
+		const int OPTION_STATE = 6;
 		int currentState = DEFAULT_HOME_STATE;
 		int previousState = -1; //used for error catching
 
@@ -78,6 +79,9 @@ namespace NYASApp
 		String[] MyNyasStrings;
 		int[] MyNyasStringIDs;
 
+		String[] OptionStrings;
+		int[] OptionStringIDs;
+
 		protected override void OnCreate (Bundle bundle)
 		{
 			RequestWindowFeature (WindowFeatures.NoTitle); //removing top bar from the app
@@ -95,7 +99,7 @@ namespace NYASApp
 		}
 
 		/// <summary>
-		/// Sets up all the layouts with the help of displaymetrics thta interrogate the screen resolution of the used device.
+		/// Sets up all the layouts with the help of displaymetrics that interrogates the screen resolution of the used device.
 		/// </summary>
 		private void SetupLayouts()
 		{
@@ -232,6 +236,13 @@ namespace NYASApp
 			MyNyasStrings = new string[MyNyasArray.Length()];
 			MyNyasStringIDs = new int[MyNyasArray.Length()];
 
+			var OptionsArray = Resources.ObtainTypedArray (Resource.Array.OptionStrings);
+			if (OptionsArray.Length () != 4) {
+				throw new Exception ("Login array was not equal to 4. Please fix this in the Strings.xml file."); //this array must be the length of 4!
+			}
+			OptionStrings = new string[OptionsArray.Length()];
+			OptionStringIDs = new int[OptionsArray.Length()];
+
 			for (int i = 0; i < 4; i++) { //every array has been tested to have exactly 4 items in it, so we can loop exactly 4 times
 				DefaultStrings [i] = DefaultArray.GetString (i);
 				DefaultStringIDs [i] = DefaultArray.GetResourceId (i, -1); //default value of -1 if resource id was not found
@@ -250,6 +261,9 @@ namespace NYASApp
 
 				MyNyasStrings [i] = MyNyasArray.GetString (i);
 				MyNyasStringIDs [i] = MyNyasArray.GetResourceId (i, -1);
+
+				OptionStrings [i] = OptionsArray.GetString (i);
+				OptionStringIDs [i] = OptionsArray.GetResourceId (i, -1);
 			}
 		}
 
@@ -304,6 +318,11 @@ namespace NYASApp
 			case MY_NYAS_STATE:
 				for (int i = 0; i < 4; i++) {
 					buttons [i].SetText (MyNyasStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
+				}
+				break;
+			case OPTION_STATE:
+				for (int i = 0; i < 4; i++) {
+					buttons [i].SetText (OptionStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
 				}
 				break;
 			}
@@ -387,7 +406,7 @@ namespace NYASApp
 					break;
 
 				case BottomRight:
-
+					ApplyState (OPTION_STATE);
 					break;
 				}
 				break;
@@ -412,6 +431,30 @@ namespace NYASApp
 					break;
 				}
 				break;
+
+			case OPTION_STATE:
+				switch(selectedButton){
+				case TopLeft:
+					MyFileManager.DeletePin (); //delete the pin
+					PinSet = false;
+					PinEntered = false;
+					InputPin.Clear ();
+					UserPin.Clear ();
+					ApplyState(LOGIN_STATE); //promt the user to the login state
+					break;
+				case TopRight:
+
+					break;
+				case BottomLeft:
+
+					break;
+
+				case BottomRight:
+
+					break;
+				}
+				break;
+
 			}
 		}
 
@@ -567,7 +610,11 @@ namespace NYASApp
 		/// </summary>
 		/// <returns><c>true</c>, if and set pin was checked, <c>false</c> otherwise.</returns>
 		private bool CheckAndSetPin(){
+			try{
 			if (MyFileManager.ReadPin ().Equals ("No pin set")) {
+				return false;
+			}
+			} catch (NullReferenceException){
 				return false;
 			}
 			UserPin = ReturnPinAsList (MyFileManager.ReadPin ()); //setting user pin

@@ -15,6 +15,7 @@ public final class R {
         public static final int LoginStrings=0x7f070003;
         public static final int MoreInfoStrings=0x7f070004;
         public static final int MyNYASStrings=0x7f070005;
+        public static final int OptionStrings=0x7f070006;
     }
     public static final class attr {
     }
@@ -89,18 +90,19 @@ public final class R {
     }
     public static final class string {
         public static final int AboutUs=0x7f06000e;
-        public static final int AboutUsDetailed=0x7f06001c;
+        public static final int AboutUsDetailed=0x7f06001e;
         public static final int Advice=0x7f06000b;
         public static final int BecomeACarer=0x7f06000f;
-        public static final int BubbleMsg1=0x7f06001e;
-        public static final int BubbleMsg2=0x7f06001f;
-        public static final int BubbleMsg3=0x7f060020;
-        public static final int BubbleMsg4=0x7f060021;
+        public static final int BubbleMsg1=0x7f060020;
+        public static final int BubbleMsg2=0x7f060021;
+        public static final int BubbleMsg3=0x7f060022;
+        public static final int BubbleMsg4=0x7f060023;
         public static final int CarerInfo=0x7f060007;
-        public static final int Confirm=0x7f060023;
+        public static final int ComingSoon=0x7f06001d;
+        public static final int Confirm=0x7f060025;
         public static final int ContactNYAS=0x7f06000c;
         public static final int ContactUs=0x7f06001a;
-        public static final int CorrectPin=0x7f060025;
+        public static final int CorrectPin=0x7f060027;
         public static final int Donate=0x7f060017;
         public static final int GetInTouch=0x7f060005;
         public static final int HowToGetHelp=0x7f060015;
@@ -112,10 +114,11 @@ public final class R {
         public static final int MyNYAS=0x7f060018;
         public static final int NotFair=0x7f06000a;
         public static final int Options=0x7f06001b;
-        public static final int Pin=0x7f060022;
-        public static final int PinConfirmed=0x7f060026;
-        public static final int PinInstructions=0x7f06001d;
+        public static final int Pin=0x7f060024;
+        public static final int PinConfirmed=0x7f060028;
+        public static final int PinInstructions=0x7f06001f;
         public static final int RateOurService=0x7f060016;
+        public static final int ResetPin=0x7f06001c;
         public static final int SchoolProblems=0x7f060009;
         public static final int SpecialCharacter1=0x7f060010;
         public static final int SpecialCharacter2=0x7f060011;
@@ -123,7 +126,7 @@ public final class R {
         public static final int SpecialCharacter4=0x7f060013;
         public static final int ViewAppointments=0x7f060003;
         public static final int WhatsNYAS=0x7f060014;
-        public static final int WrongPin=0x7f060024;
+        public static final int WrongPin=0x7f060026;
         public static final int app_name=0x7f060001;
         public static final int feelingBlue=0x7f060008;
         public static final int hello=0x7f060000;

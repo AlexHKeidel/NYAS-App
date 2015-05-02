@@ -36,6 +36,9 @@
 	<string name="ContactUs">Contact us</string>
 	<string name="Options">Options</string>
 
+	<string name="ResetPin">Reset Pin</string>
+	<string name="ComingSoon">Coming Soon</string>
+
 	<string name="AboutUsDetailed">We offer information, advice, advocacy and legal representation to children, young people and vulnerable adults.</string>
 	<string name="PinInstructions">Choose your personal pin from these symbols. Just pick 4 and remember the order!</string>
 
@@ -51,7 +54,7 @@
 	<string name="PinConfirmed">Pin confirmed and saved</string>
 
 	<string-array name="DefaultHomeScreenStrings">
-		<item>@string/KidsZone</item>
+		<item>@string/MyNYAS</item>
 		<item>@string/GetInTouch</item>
 		<item>@string/MoreInfo</item>
 		<item>@string/CarerInfo</item>
@@ -86,9 +89,16 @@
 	</string-array>
 
 	<string-array name="MyNYASStrings">
-		<item>@string/MyNYAS</item>
+		<item>@string/KidsZone</item>
 		<item>@string/MyAppointments</item>
 		<item>@string/ContactUs</item>
 		<item>@string/Options</item>
+	</string-array>
+
+	<string-array name="OptionStrings">
+		<item>@string/ResetPin</item>
+		<item>@string/ComingSoon</item>
+		<item>@string/ComingSoon</item>
+		<item>@string/ComingSoon</item>
 	</string-array>
 </resources>

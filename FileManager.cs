@@ -85,11 +85,16 @@ namespace NYASApp
 			fr.Dispose (); //disposing of file
 		}
 
-		public String ReadPin(){
-			if (!File.Exists (PinDirectory)) { //file does not exist
-				return "No pin set";
-			}
+		public void DeletePin(){
+			sw = new StreamWriter (PinDirectory, false); //new stream writer with the file directory and telling it not to append (false)!
+			sw.Write(""); //writing empty line to the file that overrides the pin
+			sw.Flush (); //flushing writer
+			sw.Close (); //closing writer
+			sw.Dispose (); //disposing of writer
+		}
 
+		public String ReadPin(){
+			try{
 			fr = new FileStream (PinDirectory, FileMode.Open); //open mode for reading files
 			sr = new StreamReader (fr); //initialise the reader
 			String Pin = sr.ReadLine (); //read the line (This file should only ever have a single line)
@@ -97,6 +102,9 @@ namespace NYASApp
 			sr.Dispose (); //disposing of the reader
 			fr.Dispose (); //disposing of the file stream
 			return Pin; //return the read line as a String.
+			} catch (Exception){
+				return "No pin set";
+			}
 		}
 	}
 }
