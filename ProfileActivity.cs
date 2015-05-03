@@ -63,10 +63,15 @@ namespace NYASApp
 		/// <summary>
 		/// Saves all changes and writes them to the correct file.
 		/// This also checks the user has entered something into each text field.
+		/// Also verifies the email address the user has entered.
 		/// </summary>
 		private void SaveAllChanges(){
 			if (NameField.Text.Contains (SEPARATOR) || AgeField.Text.Contains (SEPARATOR) || EmailField.Text.Contains (SEPARATOR) || PhoneNumberField.Text.Contains (SEPARATOR)) { //the user has used commas in their entry, reject these entries and tell the user not to use special characters
-				Toast.MakeText(this, "Please do not use special characters.", ToastLength.Long).Show();
+				Toast.MakeText(this, "Please do not use special characters.\nSaving failed.", ToastLength.Long).Show();
+				return;
+			}
+			if (!CheckEmail (EmailField.Text)) {
+				Toast.MakeText (this, "Please enter a valid Email address.\nSaving failed.", ToastLength.Long).Show ();
 				return;
 			}
 			if (NameField.Text.Length != 0 && AgeField.Text.Length != 0 && EmailField.Text.Length != 0 && PhoneNumberField.Text.Length != 0) { //No Field is empty
@@ -74,7 +79,7 @@ namespace NYASApp
 				MyFileManager.WriteProfile (ProfileString);
 				Toast.MakeText (this, "Changes saved. Press back to close.", ToastLength.Long).Show ();
 			} else {
-				Toast.MakeText (this, "Please enter your details.", ToastLength.Long).Show ();
+				Toast.MakeText (this, "Please enter your details.\nSaving failed.", ToastLength.Long).Show ();
 			}
 		}
 
@@ -84,6 +89,7 @@ namespace NYASApp
 		private void ShowProfile(){
 			String temp = MyFileManager.ReadProfile ();
 			if(temp.Equals("No Profile Set")){
+				Toast.MakeText (this, "Please enter your personal details.", ToastLength.Long).Show ();
 				return;
 			}
 			String[] ProfileData = temp.Split (SEPARATOR); //Splitting the string at commas
@@ -91,6 +97,18 @@ namespace NYASApp
 			AgeField.Text = ProfileData [1];
 			EmailField.Text = ProfileData [2];
 			PhoneNumberField.Text = ProfileData [3];
+		}
+
+		/// <summary>
+		/// Checks if the email string contains '@', '.' and is at least 10 characters long
+		/// </summary>
+		/// <returns><c>true</c>, if email contains the needed characters and is at least 10 characters long<c>false</c> otherwise.</returns>
+		/// <param name="Email">Email.</param>
+		private bool CheckEmail(String Email){
+			if (Email.Contains ("@") && Email.Contains (".") && Email.Length >= 10) {
+				return true;
+			}
+			return false;
 		}
 	}
 }

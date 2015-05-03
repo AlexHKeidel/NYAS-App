@@ -354,12 +354,20 @@
             <summary>
             Saves all changes and writes them to the correct file.
             This also checks the user has entered something into each text field.
+            Also verifies the email address the user has entered.
             </summary>
         </member>
         <member name="M:NYASApp.ProfileActivity.ShowProfile">
             <summary>
             Shows the profile on the screen inside the text fields.
             </summary>
+        </member>
+        <member name="M:NYASApp.ProfileActivity.CheckEmail(System.String)">
+            <summary>
+            Checks if the email string contains '@', '.' and is at least 10 characters long
+            </summary>
+            <returns><c>true</c>, if email contains the needed characters and is at least 10 characters long<c>false</c> otherwise.</returns>
+            <param name="Email">Email.</param>
         </member>
     </members>
 </doc>
