@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-//Created by Alexander Keidel (22397868), last edited 02/05/2015
+//Created by Alexander Keidel (22397868), last edited 03/05/2015
 namespace NYASApp
 {
 	/// <summary>
@@ -75,6 +75,13 @@ namespace NYASApp
 			}
 		}
 
+		/// <summary>
+		/// Starts the custom dialog.
+		/// This dialog has two options: edit and delete.
+		/// Editing is not currently supported.
+		/// </summary>
+		/// <param name="position">Position.</param>
+		/// <param name="appointment">Appointment.</param>
 		private void StartCustomDialog(int position, String appointment){
 			AlertDialog.Builder ad = new AlertDialog.Builder (this);
 			ad.SetMessage (appointment + "\nChoose an option.");
@@ -89,6 +96,10 @@ namespace NYASApp
 			ad.Show ();
 		}
 
+		/// <summary>
+		/// Deletes an entry at a specified location (index on the listview).
+		/// </summary>
+		/// <param name="position">Index of the item in the listview</param>
 		private void DeleteEntry(int position){
 			Console.WriteLine ("Delete item at position " + position);
 			AppointmentList.Clear ();

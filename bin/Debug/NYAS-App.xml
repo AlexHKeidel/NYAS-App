@@ -169,6 +169,11 @@
             Starts the calendar activity.
             </summary>
         </member>
+        <member name="M:NYASApp.HomepageActivity.StartProfileActivity">
+            <summary>
+            Starts the profile activity.
+            </summary>
+        </member>
         <member name="T:NYASApp.CalendarActivity">
             <summary>
             Calendar activity used to create appointments by selecting a date on the given calendar and then picking a time with the help of a time-picker dialogue.
@@ -228,6 +233,12 @@
             A StreamReader is used to read from files.
             </summary>
         </member>
+        <member name="M:NYASApp.FileManager.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NYASApp.FileManager"/> class.
+            </summary>
+            <param name="directory">Directory.</param>
+        </member>
         <member name="M:NYASApp.FileManager.WriteAppointment(System.String)">
             <summary>
             Writes the appointment.
@@ -263,6 +274,18 @@
             </summary>
             <returns>The pin as String</returns>
         </member>
+        <member name="M:NYASApp.FileManager.WriteProfile(System.String)">
+            <summary>
+            Writes the profile to the profile directory.
+            </summary>
+            <param name="text">Text to be written</param>
+        </member>
+        <member name="M:NYASApp.FileManager.ReadProfile">
+            <summary>
+            Reads the profile from the specified file location on the users device.
+            </summary>
+            <returns>The profile.</returns>
+        </member>
         <member name="T:NYASApp.AppointmentsActivity">
             <summary>
             Appointments activity displaying all the appointments the user has saved in the Appointments.txt file inside the apps resources on the users device.
@@ -289,6 +312,53 @@
         <member name="M:NYASApp.AppointmentsActivity.SetupListView">
             <summary>
             Sets up the list view displaying all appointments by adding them to the ArrayAdapter
+            </summary>
+        </member>
+        <member name="M:NYASApp.AppointmentsActivity.StartCustomDialog(System.Int32,System.String)">
+            <summary>
+            Starts the custom dialog.
+            This dialog has two options: edit and delete.
+            Editing is not currently supported.
+            </summary>
+            <param name="position">Position.</param>
+            <param name="appointment">Appointment.</param>
+        </member>
+        <member name="M:NYASApp.AppointmentsActivity.DeleteEntry(System.Int32)">
+            <summary>
+            Deletes an entry at a specified location (index on the listview).
+            </summary>
+            <param name="position">Index of the item in the listview</param>
+        </member>
+        <member name="T:NYASApp.ProfileActivity">
+            <summary>
+            Profile activity used to edit and store the users profile.
+            </summary>
+        </member>
+        <member name="M:NYASApp.ProfileActivity.OnCreate(Android.OS.Bundle)">
+            <summary>
+            Raises the create event.
+            </summary>
+            <param name="bundle">Bundle.</param>
+        </member>
+        <member name="M:NYASApp.ProfileActivity.SetupResources">
+            <summary>
+            Sets up all the resources for this activity.
+            </summary>
+        </member>
+        <member name="M:NYASApp.ProfileActivity.SetupListeners">
+            <summary>
+            Sets up all the listeners for relevant view of this activity.
+            </summary>
+        </member>
+        <member name="M:NYASApp.ProfileActivity.SaveAllChanges">
+            <summary>
+            Saves all changes and writes them to the correct file.
+            This also checks the user has entered something into each text field.
+            </summary>
+        </member>
+        <member name="M:NYASApp.ProfileActivity.ShowProfile">
+            <summary>
+            Shows the profile on the screen inside the text fields.
             </summary>
         </member>
     </members>

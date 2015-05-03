@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-//Created by Alexander Keidel (22397868), last edited 02/05/2015
+//Created by Alexander Keidel (22397868), last edited 03/05/2015
 namespace NYASApp
 {
 	/// <summary>
@@ -401,7 +401,7 @@ namespace NYASApp
 			case MY_NYAS_STATE:
 				switch (selectedButton) {
 				case TopLeft:
-
+					StartProfileActivity ();
 					break;
 				case TopRight:
 					StartCalendarActivity ();
@@ -738,6 +738,13 @@ namespace NYASApp
 		/// </summary>
 		private void StartCalendarActivity(){
 			StartActivity (typeof(CalendarActivity)); //starting a new calendar activity
+		}
+
+		/// <summary>
+		/// Starts the profile activity.
+		/// </summary>
+		private void StartProfileActivity(){
+			StartActivity (typeof(ProfileActivity)); //starting a new profile activity
 		}
 	}
 }

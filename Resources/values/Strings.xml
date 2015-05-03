@@ -3,6 +3,12 @@
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">NYAS-App</string>
 
+	<string name="EnterYourName">Enter Your Name</string>
+	<string name="EnterYourAge">Enter Your Age</string>
+	<string name="EnterYourEmail">Enter Your Email</string>
+	<string name="EnterYourPhoneNumber">Enter Your Phone Number</string>
+	<string name="SaveChanges">Save Changes</string>
+
 	<string name="MakeAppointment">Make Appointment</string>
 	<string name="ViewAppointments">View Appointments</string>
 
@@ -32,6 +38,8 @@
 	<string name="Donate">Donate</string>
 
 	<string name="MyNYAS">My NYAS</string>
+	<string name="MyProfile">My Profile</string>
+
 	<string name="MyAppointments">My Appointments</string>
 	<string name="ContactUs">Contact us</string>
 	<string name="Options">Options</string>
@@ -89,7 +97,7 @@
 	</string-array>
 
 	<string-array name="MyNYASStrings">
-		<item>@string/KidsZone</item>
+		<item>@string/MyProfile</item>
 		<item>@string/MyAppointments</item>
 		<item>@string/ContactUs</item>
 		<item>@string/Options</item>

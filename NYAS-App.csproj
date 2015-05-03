@@ -52,6 +52,7 @@
     <Compile Include="CalendarActivity.cs" />
     <Compile Include="FileManager.cs" />
     <Compile Include="AppointmentsActivity.cs" />
+    <Compile Include="ProfileActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -86,6 +87,7 @@
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\layout\Appointments_Activity_Layout.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\alternative_orange_gradient.xml" />
+    <AndroidResource Include="Resources\layout\Profile_Activity_Layout.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

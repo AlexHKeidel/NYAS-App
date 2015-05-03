@@ -34,5 +34,6 @@ G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\layout\calendar_activity_la
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\values\styles.xml
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\layout\appointments_activity_layout.xml
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\drawable-hdpi\alternative_orange_gradient.xml
+G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\res\layout\profile_activity_layout.xml
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\R.cs.flag
 G:\Xamarin Workspace\NYAS-App\NYAS-App\obj\Debug\uploadflags.txt

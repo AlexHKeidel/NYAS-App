@@ -14,19 +14,26 @@ namespace NYASApp
 	/// </summary>
 	public class FileManager
 	{	
-		const String AppointmentFile = "AppointmentFile.txt";
-		const String PinFile = "Pin.txt";
-		String AppointmentDirectory, PinDirectory;
+		const String APPOINTMENT_LOCATION = "AppointmentFile.txt";
+		const String PIN_LOCATION = "Pin.txt";
+		const String PROFILE_LOCATION = "Profile.txt";
+		String AppointmentDirectory, PinDirectory, ProfileDirectory;
 		String path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData); // see http://stackoverflow.com/questions/21707138/cannot-create-files-on-android-with-xamarin
 		StreamWriter sw;
 		StreamReader sr;
 		FileStream fr;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="NYASApp.FileManager"/> class.
+		/// </summary>
+		/// <param name="directory">Directory.</param>
 		public FileManager (string directory)
 		{
-			AppointmentDirectory = directory + AppointmentFile;
-			PinDirectory = directory + PinFile;
+			AppointmentDirectory = directory + APPOINTMENT_LOCATION;
+			PinDirectory = directory + PIN_LOCATION;
+			ProfileDirectory = directory + PROFILE_LOCATION;
 		}
+
 		/// <summary>
 		/// Writes the appointment.
 		/// </summary>
@@ -116,12 +123,42 @@ namespace NYASApp
 			fr = new FileStream (PinDirectory, FileMode.Open); //open mode for reading files
 			sr = new StreamReader (fr); //initialise the reader
 			String Pin = sr.ReadLine (); //read the line (This file should only ever have a single line)
-			sr.Close (); //clsing the reader
+			sr.Close (); //closing the reader
 			sr.Dispose (); //disposing of the reader
 			fr.Dispose (); //disposing of the file stream
 			return Pin; //return the read line as a String.
 			} catch (Exception){
 				return "No pin set";
+			}
+		}
+
+		/// <summary>
+		/// Writes the profile to the profile directory.
+		/// </summary>
+		/// <param name="text">Text to be written</param>
+		public void WriteProfile(String text){
+			sw = new StreamWriter (ProfileDirectory, false); //do not append but just rewrite the file
+			sw.Write(text);
+			sw.Flush ();
+			sw.Close ();
+			sw.Dispose ();
+		}
+
+		/// <summary>
+		/// Reads the profile from the specified file location on the users device.
+		/// </summary>
+		/// <returns>The profile.</returns>
+		public String ReadProfile(){
+			try{
+				fr = new FileStream (ProfileDirectory, FileMode.Open); //open mode for reading files
+				sr = new StreamReader (fr); //initialise the reader
+				String Profile = sr.ReadLine (); //read the line (This file should only ever have a single line)
+				sr.Close (); //closing the reader
+				sr.Dispose (); //disposing of the reader
+				fr.Dispose (); //disposing of the file stream
+				return Profile; //return the read line as a String.
+			} catch (Exception){
+				return "No Profile Set";
 			}
 		}
 	}
