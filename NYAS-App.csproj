@@ -53,6 +53,7 @@
     <Compile Include="FileManager.cs" />
     <Compile Include="AppointmentsActivity.cs" />
     <Compile Include="ProfileActivity.cs" />
+    <Compile Include="ContactActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -88,6 +89,8 @@
     <AndroidResource Include="Resources\layout\Appointments_Activity_Layout.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\alternative_orange_gradient.xml" />
     <AndroidResource Include="Resources\layout\Profile_Activity_Layout.xml" />
+    <AndroidResource Include="Resources\layout\Contact_Activity_Layout.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\People_Example.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

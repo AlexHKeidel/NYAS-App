@@ -352,7 +352,7 @@ namespace NYASApp
 					ApplyState (LOGIN_STATE);
 					break;
 				case TopRight:
-
+					StartContactActivity ();
 					break;
 				case BottomLeft:
 					ApplyState (MORE_INFO_STATE);
@@ -407,7 +407,7 @@ namespace NYASApp
 					StartCalendarActivity ();
 					break;
 				case BottomLeft:
-
+					StartContactActivity ();
 					break;
 
 				case BottomRight:
@@ -745,6 +745,10 @@ namespace NYASApp
 		/// </summary>
 		private void StartProfileActivity(){
 			StartActivity (typeof(ProfileActivity)); //starting a new profile activity
+		}
+
+		private void StartContactActivity(){
+			StartActivity (typeof(ContactActivity)); //start a new contact activity
 		}
 	}
 }

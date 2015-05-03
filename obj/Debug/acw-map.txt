@@ -18,3 +18,7 @@ NYASApp.ProfileActivity, NYAS-App;md5d3f8f218449cb7e448e96a1ec1009884.ProfileAct
 NYASApp.ProfileActivity, NYAS-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d3f8f218449cb7e448e96a1ec1009884.ProfileActivity
 NYASApp.ProfileActivity;md5d3f8f218449cb7e448e96a1ec1009884.ProfileActivity
 nyasapp.ProfileActivity;md5d3f8f218449cb7e448e96a1ec1009884.ProfileActivity
+NYASApp.ContactActivity, NYAS-App;md5d3f8f218449cb7e448e96a1ec1009884.ContactActivity
+NYASApp.ContactActivity, NYAS-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d3f8f218449cb7e448e96a1ec1009884.ContactActivity
+NYASApp.ContactActivity;md5d3f8f218449cb7e448e96a1ec1009884.ContactActivity
+nyasapp.ContactActivity;md5d3f8f218449cb7e448e96a1ec1009884.ContactActivity

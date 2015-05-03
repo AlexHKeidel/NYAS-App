@@ -369,5 +369,26 @@
             <returns><c>true</c>, if email contains the needed characters and is at least 10 characters long<c>false</c> otherwise.</returns>
             <param name="Email">Email.</param>
         </member>
+        <member name="T:NYASApp.ContactActivity">
+            <summary>
+            Contact activity used to directly contact NYAS via email or freephone.
+            </summary>
+        </member>
+        <member name="M:NYASApp.ContactActivity.OnCreate(Android.OS.Bundle)">
+            <summary>
+            Raises the create event.
+            </summary>
+            <param name="bundle">Bundle.</param>
+        </member>
+        <member name="M:NYASApp.ContactActivity.SetupResources">
+            <summary>
+            Sets up the resources for this activity, such as the buttons.
+            </summary>
+        </member>
+        <member name="M:NYASApp.ContactActivity.SetupListeners">
+            <summary>
+            Sets up the listeners for the buttons of this activity.
+            </summary>
+        </member>
     </members>
 </doc>

@@ -9,6 +9,10 @@
 	<string name="EnterYourPhoneNumber">Enter Your Phone Number</string>
 	<string name="SaveChanges">Save Changes</string>
 
+	<string name="HowToConactNYAS">How to contact NYAS</string>
+	<string name="Freephone">Freephone</string>
+	<string name="SendEmail">Send Email</string>
+
 	<string name="MakeAppointment">Make Appointment</string>
 	<string name="ViewAppointments">View Appointments</string>
 

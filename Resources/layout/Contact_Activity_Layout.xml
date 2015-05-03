@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/backgroundOrange"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ConactRelativeLayout">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ContactTitle"
+            android:text="@string/HowToConactNYAS"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/CallFreePhone"
+            android:text="@string/Freephone"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rectangle_green_gradient"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/ContactTitle" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/SendEmail"
+            android:text="@string/SendEmail"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:layout_above="@+id/makeAppointmentButton"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rectangle_green_gradient"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@id/CallFreePhone" />
+        <ImageView
+            android:src="@drawable/People_Example"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ContactArtImage"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>
