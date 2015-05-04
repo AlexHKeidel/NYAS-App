@@ -1,0 +1,24 @@
+NYASApp.MainActivity, NYAS-App;md5d3f8f218449cb7e448e96a1ec1009884.MainActivity
+NYASApp.MainActivity, NYAS-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d3f8f218449cb7e448e96a1ec1009884.MainActivity
+NYASApp.MainActivity;md5d3f8f218449cb7e448e96a1ec1009884.MainActivity
+nyasapp.MainActivity;md5d3f8f218449cb7e448e96a1ec1009884.MainActivity
+NYASApp.HomepageActivity, NYAS-App;md5d3f8f218449cb7e448e96a1ec1009884.HomepageActivity
+NYASApp.HomepageActivity, NYAS-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d3f8f218449cb7e448e96a1ec1009884.HomepageActivity
+NYASApp.HomepageActivity;md5d3f8f218449cb7e448e96a1ec1009884.HomepageActivity
+nyasapp.HomepageActivity;md5d3f8f218449cb7e448e96a1ec1009884.HomepageActivity
+NYASApp.CalendarActivity, NYAS-App;md5d3f8f218449cb7e448e96a1ec1009884.CalendarActivity
+NYASApp.CalendarActivity, NYAS-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d3f8f218449cb7e448e96a1ec1009884.CalendarActivity
+NYASApp.CalendarActivity;md5d3f8f218449cb7e448e96a1ec1009884.CalendarActivity
+nyasapp.CalendarActivity;md5d3f8f218449cb7e448e96a1ec1009884.CalendarActivity
+NYASApp.AppointmentsActivity, NYAS-App;md5d3f8f218449cb7e448e96a1ec1009884.AppointmentsActivity
+NYASApp.AppointmentsActivity, NYAS-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d3f8f218449cb7e448e96a1ec1009884.AppointmentsActivity
+NYASApp.AppointmentsActivity;md5d3f8f218449cb7e448e96a1ec1009884.AppointmentsActivity
+nyasapp.AppointmentsActivity;md5d3f8f218449cb7e448e96a1ec1009884.AppointmentsActivity
+NYASApp.ProfileActivity, NYAS-App;md5d3f8f218449cb7e448e96a1ec1009884.ProfileActivity
+NYASApp.ProfileActivity, NYAS-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d3f8f218449cb7e448e96a1ec1009884.ProfileActivity
+NYASApp.ProfileActivity;md5d3f8f218449cb7e448e96a1ec1009884.ProfileActivity
+nyasapp.ProfileActivity;md5d3f8f218449cb7e448e96a1ec1009884.ProfileActivity
+NYASApp.ContactActivity, NYAS-App;md5d3f8f218449cb7e448e96a1ec1009884.ContactActivity
+NYASApp.ContactActivity, NYAS-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d3f8f218449cb7e448e96a1ec1009884.ContactActivity
+NYASApp.ContactActivity;md5d3f8f218449cb7e448e96a1ec1009884.ContactActivity
+nyasapp.ContactActivity;md5d3f8f218449cb7e448e96a1ec1009884.ContactActivity

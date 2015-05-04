@@ -56,6 +56,8 @@ namespace NYASApp
 		bool PinSet = false;
 		bool PinEntered = false;
 
+		String UserName = "";
+
 		const String TopLeft = "TopLeft";
 		const String TopRight = "TopRight";
 		const String BottomLeft = "BottomLeft";
@@ -95,11 +97,28 @@ namespace NYASApp
 			SetupResourceStringIDs (); //setting up the string ids associated with each possible state of this activity
 			ApplyState (DEFAULT_HOME_STATE); //initialising default state of the page
 			ApplyButtonListeners (); //setting up button listeners
-			ApplyRandomBubbleMessage ();
+			MyFileManager = new FileManager(BaseContext.FilesDir.AbsolutePath); //setting up filemanager
+			if (CheckUserName ()) { //if the user has already entered their name at one point it will use the username with a special message, i.e. "Hello USERNAME and welcome back."
+				SetCustomBubbleMessage ();
+			} else {
+				ApplyRandomBubbleMessage (); //apply a generic message.
+			}
 			ResizeButtonText (DEFAULT_TEXT_SIZE); //resizing the button text size to enforce it, as the xml does not seem to update it correctly
+		}
 
-			//setting up filemanager
-			MyFileManager = new FileManager(BaseContext.FilesDir.AbsolutePath);
+		/// <summary>
+		/// Raises the resume event.
+		/// This will reapply a new random bubble message.
+		/// </summary>
+		protected override void OnResume ()
+		{
+			base.OnResume (); //you should always call this first when overriding.
+
+			if (CheckUserName ()) { //if the user has already entered their name at one point it will use the username with a special message, i.e. "Hello USERNAME and welcome back."
+				SetCustomBubbleMessage ();
+			} else {
+				ApplyRandomBubbleMessage (); //apply a generic message.
+			}
 		}
 
 		/// <summary>
@@ -715,6 +734,39 @@ namespace NYASApp
 			default:
 				speechBubbleText.SetText (Resource.String.BubbleMsg1);
 				break;
+			}
+		}
+
+		private void SetCustomBubbleMessage(){
+			Random randy = new Random ();
+			int temp = randy.Next (1, 101) / 25; //roll random number between 1 (inclusive) and 101 (exclusive)
+			switch (temp) {
+			case 1:
+				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg1) + " " + UserName);
+				break;
+			case 2:
+				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg2Part1Of2) + " " + UserName + " " + Resources.GetString(Resource.String.CustomBubbleMsg2Part2Of2));
+				break;
+			case 3:
+				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg3Part1Of2) + " " + UserName + " " + Resources.GetString(Resource.String.CustomBubbleMsg3Part2Of2));
+				break;
+			case 4:
+				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg1) + " " + UserName);
+				break;
+			default:
+				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg1) + " " + UserName);
+				break;
+			}
+		}
+
+		private bool CheckUserName(){
+			if (MyFileManager.ReadProfile ().Equals ("No Profile Set")) {
+				return false;
+			} else {
+				String Splitter = MyFileManager.ReadProfile ();
+				String[] Profile = Splitter.Split (',');
+				UserName = Profile [0];
+				return true;
 			}
 		}
 

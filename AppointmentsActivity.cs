@@ -89,9 +89,7 @@ namespace NYASApp
 			ad.SetPositiveButton("Delete", delegate {
 				DeleteEntry(position);
 			});
-			ad.SetNegativeButton ("Edit", delegate {
-				Console.WriteLine ("Editing not currently supported");
-				Toast.MakeText(this, "Editing not currently supported", ToastLength.Long).Show();
+			ad.SetNegativeButton ("Cancel", delegate {
 			});
 			ad.Show ();
 		}

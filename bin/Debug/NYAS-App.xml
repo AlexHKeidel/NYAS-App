@@ -31,6 +31,12 @@
             </summary>
             <param name="bundle">Bundle.</param>
         </member>
+        <member name="M:NYASApp.HomepageActivity.OnResume">
+            <summary>
+            Raises the resume event.
+            This will reapply a new random bubble message.
+            </summary>
+        </member>
         <member name="M:NYASApp.HomepageActivity.SetupLayouts">
             <summary>
             Sets up all the layouts with the help of displaymetrics that interrogates the screen resolution of the used device.

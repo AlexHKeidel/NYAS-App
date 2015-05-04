@@ -115,10 +115,15 @@ public final class R {
         public static final int BubbleMsg4=0x7f06002c;
         public static final int CarerInfo=0x7f06000f;
         public static final int ComingSoon=0x7f060026;
-        public static final int Confirm=0x7f06002e;
+        public static final int Confirm=0x7f060033;
         public static final int ContactNYAS=0x7f060014;
         public static final int ContactUs=0x7f060023;
-        public static final int CorrectPin=0x7f060030;
+        public static final int CorrectPin=0x7f060035;
+        public static final int CustomBubbleMsg1=0x7f06002d;
+        public static final int CustomBubbleMsg2Part1Of2=0x7f06002e;
+        public static final int CustomBubbleMsg2Part2Of2=0x7f06002f;
+        public static final int CustomBubbleMsg3Part1Of2=0x7f060030;
+        public static final int CustomBubbleMsg3Part2Of2=0x7f060031;
         public static final int Donate=0x7f06001f;
         public static final int EnterYourAge=0x7f060003;
         public static final int EnterYourEmail=0x7f060004;
@@ -137,8 +142,8 @@ public final class R {
         public static final int MyProfile=0x7f060021;
         public static final int NotFair=0x7f060012;
         public static final int Options=0x7f060024;
-        public static final int Pin=0x7f06002d;
-        public static final int PinConfirmed=0x7f060031;
+        public static final int Pin=0x7f060032;
+        public static final int PinConfirmed=0x7f060036;
         public static final int PinInstructions=0x7f060028;
         public static final int RateOurService=0x7f06001e;
         public static final int ResetPin=0x7f060025;
@@ -151,7 +156,7 @@ public final class R {
         public static final int SpecialCharacter4=0x7f06001b;
         public static final int ViewAppointments=0x7f06000b;
         public static final int WhatsNYAS=0x7f06001c;
-        public static final int WrongPin=0x7f06002f;
+        public static final int WrongPin=0x7f060034;
         public static final int app_name=0x7f060001;
         public static final int feelingBlue=0x7f060010;
         public static final int hello=0x7f060000;

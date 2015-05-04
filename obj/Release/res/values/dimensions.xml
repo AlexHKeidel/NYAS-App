@@ -1,0 +1,1 @@
+<resources><dimen name="buttonCornerRadius">40dp</dimen><dimen name="buttonPadding">10dp</dimen><dimen name="ButtonTextSize">20sp</dimen><dimen name="SpecialButtonSize">40sp</dimen></resources>

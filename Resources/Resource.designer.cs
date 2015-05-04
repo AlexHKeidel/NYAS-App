@@ -398,8 +398,8 @@ namespace NYASApp
 			// aapt resource value: 0x7f060026
 			public const int ComingSoon = 2131099686;
 			
-			// aapt resource value: 0x7f06002e
-			public const int Confirm = 2131099694;
+			// aapt resource value: 0x7f060033
+			public const int Confirm = 2131099699;
 			
 			// aapt resource value: 0x7f060014
 			public const int ContactNYAS = 2131099668;
@@ -407,8 +407,23 @@ namespace NYASApp
 			// aapt resource value: 0x7f060023
 			public const int ContactUs = 2131099683;
 			
+			// aapt resource value: 0x7f060035
+			public const int CorrectPin = 2131099701;
+			
+			// aapt resource value: 0x7f06002d
+			public const int CustomBubbleMsg1 = 2131099693;
+			
+			// aapt resource value: 0x7f06002e
+			public const int CustomBubbleMsg2Part1Of2 = 2131099694;
+			
+			// aapt resource value: 0x7f06002f
+			public const int CustomBubbleMsg2Part2Of2 = 2131099695;
+			
 			// aapt resource value: 0x7f060030
-			public const int CorrectPin = 2131099696;
+			public const int CustomBubbleMsg3Part1Of2 = 2131099696;
+			
+			// aapt resource value: 0x7f060031
+			public const int CustomBubbleMsg3Part2Of2 = 2131099697;
 			
 			// aapt resource value: 0x7f06001f
 			public const int Donate = 2131099679;
@@ -464,11 +479,11 @@ namespace NYASApp
 			// aapt resource value: 0x7f060024
 			public const int Options = 2131099684;
 			
-			// aapt resource value: 0x7f06002d
-			public const int Pin = 2131099693;
+			// aapt resource value: 0x7f060032
+			public const int Pin = 2131099698;
 			
-			// aapt resource value: 0x7f060031
-			public const int PinConfirmed = 2131099697;
+			// aapt resource value: 0x7f060036
+			public const int PinConfirmed = 2131099702;
 			
 			// aapt resource value: 0x7f060028
 			public const int PinInstructions = 2131099688;
@@ -506,8 +521,8 @@ namespace NYASApp
 			// aapt resource value: 0x7f06001c
 			public const int WhatsNYAS = 2131099676;
 			
-			// aapt resource value: 0x7f06002f
-			public const int WrongPin = 2131099695;
+			// aapt resource value: 0x7f060034
+			public const int WrongPin = 2131099700;
 			
 			// aapt resource value: 0x7f060001
 			public const int app_name = 2131099649;

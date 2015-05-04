@@ -66,21 +66,32 @@ namespace NYASApp
 		/// Also verifies the email address the user has entered.
 		/// </summary>
 		private void SaveAllChanges(){
+			if (NameField.Text.Length == 0 || AgeField.Text.Length == 0 || EmailField.Text.Length == 0 || PhoneNumberField.Text.Length == 0) { //a field is empty.
+				Toast.MakeText(this, "All fields are required in order to save changes.", ToastLength.Long).Show();
+				return;
+			}
+
 			if (NameField.Text.Contains (SEPARATOR) || AgeField.Text.Contains (SEPARATOR) || EmailField.Text.Contains (SEPARATOR) || PhoneNumberField.Text.Contains (SEPARATOR)) { //the user has used commas in their entry, reject these entries and tell the user not to use special characters
 				Toast.MakeText(this, "Please do not use special characters.\nSaving failed.", ToastLength.Long).Show();
 				return;
 			}
+
 			if (!CheckEmail (EmailField.Text)) {
 				Toast.MakeText (this, "Please enter a valid Email address.\nSaving failed.", ToastLength.Long).Show ();
 				return;
 			}
+
 			if (NameField.Text.Length != 0 && AgeField.Text.Length != 0 && EmailField.Text.Length != 0 && PhoneNumberField.Text.Length != 0) { //No Field is empty
 				String ProfileString = NameField.Text + SEPARATOR + AgeField.Text + SEPARATOR + EmailField.Text + SEPARATOR + PhoneNumberField.Text;
 				MyFileManager.WriteProfile (ProfileString);
 				Toast.MakeText (this, "Changes saved. Press back to close.", ToastLength.Long).Show ();
 			} else {
 				Toast.MakeText (this, "Please enter your details.\nSaving failed.", ToastLength.Long).Show ();
+				return;
 			}
+
+
+
 		}
 
 		/// <summary>

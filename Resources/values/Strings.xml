@@ -59,6 +59,12 @@
 	<string name="BubbleMsg3">Hello there, how are you today?</string>
 	<string name="BubbleMsg4">Help me! I\'m trapped in here!</string>
 
+	<string name="CustomBubbleMsg1">Welcome back </string>
+	<string name="CustomBubbleMsg2Part1Of2">Hello</string>
+	<string name="CustomBubbleMsg2Part2Of2"> and welcome back.</string>
+	<string name="CustomBubbleMsg3Part1Of2">Hello</string>
+	<string name="CustomBubbleMsg3Part2Of2"> how are you today?</string>
+
 	<string name="Pin">Pin:</string>
 	<string name="Confirm">Confirm:</string>
 	<string name="WrongPin">Incorrect Pin entered</string>
