@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-//Created by Alexander Keidel (22397868), last edited 03/05/2015
+//Created by Alexander Keidel (22397868), last edited 07/05/2015
 namespace NYASApp
 {
 	/// <summary>
@@ -32,6 +32,7 @@ namespace NYASApp
 		int currentTextSize = DEFAULT_TEXT_SIZE;
 
 		const int DEFAULT_BOX_CONTENT = Resource.String.AboutUsDetailed;
+		const int SLOGAN_BOX_CONTENT = Resource.String.Slogan;
 		const int LOGIN_INSTRUCTIONS_BOX_CONTENT = Resource.String.PinInstructions;
 		const int CORRECT_PIN_BOX_CONTENT = Resource.String.CorrectPin;
 		const int INCORRECT_PIN_BOX_CONTENT = Resource.String.WrongPin;
@@ -113,7 +114,7 @@ namespace NYASApp
 		protected override void OnResume ()
 		{
 			base.OnResume (); //you should always call this first when overriding.
-
+			UpdateBottomTextBox(SLOGAN_BOX_CONTENT); //reset the bottom text box to the default message
 			if (CheckUserName ()) { //if the user has already entered their name at one point it will use the username with a special message, i.e. "Hello USERNAME and welcome back."
 				SetCustomBubbleMessage ();
 			} else {
@@ -438,13 +439,13 @@ namespace NYASApp
 			case MORE_INFO_STATE:
 				switch (selectedButton) {
 				case TopLeft:
-
+					StartInformationActivit (Resources.GetInteger(Resource.Integer.IAWhatsNYASDoContext)); //see Constants.xml for different contexts
 					break;
 				case TopRight:
-					
+					StartContactActivity ();
 					break;
 				case BottomLeft:
-
+					Toast.MakeText (this, "Please rate the App in the Google Play Store!", ToastLength.Long).Show ();
 					break;
 
 				case BottomRight:
@@ -484,8 +485,8 @@ namespace NYASApp
 
 		/// <summary>
 		/// This method is called by the buttons when in LOGIN_STATE.
-		/// Checks for the current state of the Pin and appends it
-		/// Compares the pin the user has put in 
+		/// Checks for the current state of the Pin and appends it.
+		/// Compares the pin the user has put in to the saved one.
 		/// </summary>
 		/// <param name="Symbol">Symbol.</param>
 		/// <param name="resID">Res I.</param>
@@ -519,7 +520,7 @@ namespace NYASApp
 			}
 		}
 
-			/** REWORKING THIS LOGIC
+			/** REWORKED THIS LOGIC, SEE ABOVE
 			if (PinSet) { //the pin is already set
 				if (InputPin.Count >= 3) { //the user has put in 4 characters
 					InputPin.Add (Symbol); //add the given Symbol to the InputPin;
@@ -737,12 +738,16 @@ namespace NYASApp
 			}
 		}
 
+		/// <summary>
+		/// Sets the custom bubble message containing the username.
+		/// This is only called when <see cref="CheckUserName()"/>  returns true and <see cref="UserName"/> has been set.
+		/// </summary>
 		private void SetCustomBubbleMessage(){
 			Random randy = new Random ();
 			int temp = randy.Next (1, 101) / 25; //roll random number between 1 (inclusive) and 101 (exclusive)
 			switch (temp) {
 			case 1:
-				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg1) + " " + UserName);
+				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg1) + ", " + UserName);
 				break;
 			case 2:
 				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg2Part1Of2) + " " + UserName + " " + Resources.GetString(Resource.String.CustomBubbleMsg2Part2Of2));
@@ -751,14 +756,18 @@ namespace NYASApp
 				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg3Part1Of2) + " " + UserName + " " + Resources.GetString(Resource.String.CustomBubbleMsg3Part2Of2));
 				break;
 			case 4:
-				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg1) + " " + UserName);
+				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg1) + ", " + UserName);
 				break;
 			default:
-				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg1) + " " + UserName);
+				speechBubbleText.Text = (Resources.GetString(Resource.String.CustomBubbleMsg1) + ", " + UserName);
 				break;
 			}
 		}
 
+		/// <summary>
+		/// Checks if the user has saved a profile and reads the username from it and saves it in <see cref="UserName"/>
+		/// </summary>
+		/// <returns><c>true</c>, if user name was checked and set <c>false</c> otherwise.</returns>
 		private bool CheckUserName(){
 			if (MyFileManager.ReadProfile ().Equals ("No Profile Set")) {
 				return false;
@@ -799,8 +808,21 @@ namespace NYASApp
 			StartActivity (typeof(ProfileActivity)); //starting a new profile activity
 		}
 
+		/// <summary>
+		/// Starts the contact activity.
+		/// </summary>
 		private void StartContactActivity(){
 			StartActivity (typeof(ContactActivity)); //start a new contact activity
+		}
+
+		/// <summary>
+		/// Starts the information activit.
+		/// Give this activity the chosen context, such as "what's nyas do?"
+		/// </summary>
+		private void StartInformationActivit (int context){
+			Intent CustomInfoIntent = new Intent (this, typeof(InformationActivity));
+			CustomInfoIntent.PutExtra ("CONTEXT", context);
+			StartActivity (CustomInfoIntent);
 		}
 	}
 }
