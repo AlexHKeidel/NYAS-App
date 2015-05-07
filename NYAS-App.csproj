@@ -54,6 +54,7 @@
     <Compile Include="AppointmentsActivity.cs" />
     <Compile Include="ProfileActivity.cs" />
     <Compile Include="ContactActivity.cs" />
+    <Compile Include="InformationActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -84,13 +85,15 @@
     <AndroidResource Include="Resources\drawable-hdpi\NYAS_App_Logo.png" />
     <AndroidResource Include="Resources\drawable-hdpi\rectangle_peach_gradient.xml" />
     <AndroidResource Include="Resources\values\dimensions.xml" />
-    <AndroidResource Include="Resources\layout\Calendar_Activity_Layout.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
-    <AndroidResource Include="Resources\layout\Appointments_Activity_Layout.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\alternative_orange_gradient.xml" />
-    <AndroidResource Include="Resources\layout\Profile_Activity_Layout.xml" />
-    <AndroidResource Include="Resources\layout\Contact_Activity_Layout.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\People_Example.png" />
+    <AndroidResource Include="Resources\layout\Information_Activity_Layout.axml" />
+    <AndroidResource Include="Resources\layout\Appointments_Activity_Layout.axml" />
+    <AndroidResource Include="Resources\layout\Calendar_Activity_Layout.axml" />
+    <AndroidResource Include="Resources\layout\Contact_Activity_Layout.axml" />
+    <AndroidResource Include="Resources\layout\Profile_Activity_Layout.axml" />
+    <AndroidResource Include="Resources\values\Constants.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

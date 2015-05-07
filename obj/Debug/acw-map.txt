@@ -22,3 +22,7 @@ NYASApp.ContactActivity, NYAS-App;md5d3f8f218449cb7e448e96a1ec1009884.ContactAct
 NYASApp.ContactActivity, NYAS-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d3f8f218449cb7e448e96a1ec1009884.ContactActivity
 NYASApp.ContactActivity;md5d3f8f218449cb7e448e96a1ec1009884.ContactActivity
 nyasapp.ContactActivity;md5d3f8f218449cb7e448e96a1ec1009884.ContactActivity
+NYASApp.InformationActivity, NYAS-App;md5d3f8f218449cb7e448e96a1ec1009884.InformationActivity
+NYASApp.InformationActivity, NYAS-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d3f8f218449cb7e448e96a1ec1009884.InformationActivity
+NYASApp.InformationActivity;md5d3f8f218449cb7e448e96a1ec1009884.InformationActivity
+nyasapp.InformationActivity;md5d3f8f218449cb7e448e96a1ec1009884.InformationActivity

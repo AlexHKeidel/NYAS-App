@@ -31,26 +31,26 @@ namespace NYASApp
 		public partial class Array
 		{
 			
-			// aapt resource value: 0x7f070002
-			public const int CarerInfoStrings = 2131165186;
+			// aapt resource value: 0x7f080002
+			public const int CarerInfoStrings = 2131230722;
 			
-			// aapt resource value: 0x7f070000
-			public const int DefaultHomeScreenStrings = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int DefaultHomeScreenStrings = 2131230720;
 			
-			// aapt resource value: 0x7f070001
-			public const int KidsZoneScreenStrings = 2131165185;
+			// aapt resource value: 0x7f080001
+			public const int KidsZoneScreenStrings = 2131230721;
 			
-			// aapt resource value: 0x7f070003
-			public const int LoginStrings = 2131165187;
+			// aapt resource value: 0x7f080003
+			public const int LoginStrings = 2131230723;
 			
-			// aapt resource value: 0x7f070004
-			public const int MoreInfoStrings = 2131165188;
+			// aapt resource value: 0x7f080004
+			public const int MoreInfoStrings = 2131230724;
 			
-			// aapt resource value: 0x7f070005
-			public const int MyNYASStrings = 2131165189;
+			// aapt resource value: 0x7f080005
+			public const int MyNYASStrings = 2131230725;
 			
-			// aapt resource value: 0x7f070006
-			public const int OptionStrings = 2131165190;
+			// aapt resource value: 0x7f080006
+			public const int OptionStrings = 2131230726;
 			
 			static Array()
 			{
@@ -148,17 +148,17 @@ namespace NYASApp
 		public partial class Dimension
 		{
 			
-			// aapt resource value: 0x7f050002
-			public const int ButtonTextSize = 2131034114;
+			// aapt resource value: 0x7f060002
+			public const int ButtonTextSize = 2131099650;
 			
-			// aapt resource value: 0x7f050003
-			public const int SpecialButtonSize = 2131034115;
+			// aapt resource value: 0x7f060003
+			public const int SpecialButtonSize = 2131099651;
 			
-			// aapt resource value: 0x7f050000
-			public const int buttonCornerRadius = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int buttonCornerRadius = 2131099648;
 			
-			// aapt resource value: 0x7f050001
-			public const int buttonPadding = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int buttonPadding = 2131099649;
 			
 			static Dimension()
 			{
@@ -234,95 +234,110 @@ namespace NYASApp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f090015
-			public const int BottomInfoText = 2131296277;
+			// aapt resource value: 0x7f0a0016
+			public const int BottomInfoText = 2131361814;
 			
-			// aapt resource value: 0x7f090009
-			public const int CallFreePhone = 2131296265;
+			// aapt resource value: 0x7f0a000a
+			public const int CallFreePhone = 2131361802;
 			
-			// aapt resource value: 0x7f090007
-			public const int ConactRelativeLayout = 2131296263;
+			// aapt resource value: 0x7f0a0007
+			public const int ConactRelativeLayout = 2131361799;
 			
-			// aapt resource value: 0x7f09000b
-			public const int ContactArtImage = 2131296267;
+			// aapt resource value: 0x7f0a000c
+			public const int ContactArtImage = 2131361804;
 			
-			// aapt resource value: 0x7f090008
-			public const int ContactTitle = 2131296264;
+			// aapt resource value: 0x7f0a0009
+			public const int ContactContent = 2131361801;
 			
-			// aapt resource value: 0x7f090019
-			public const int EnterAgeField = 2131296281;
+			// aapt resource value: 0x7f0a0008
+			public const int ContactTitle = 2131361800;
 			
-			// aapt resource value: 0x7f09001a
-			public const int EnterEmailField = 2131296282;
+			// aapt resource value: 0x7f0a001e
+			public const int EnterAgeField = 2131361822;
 			
-			// aapt resource value: 0x7f090018
-			public const int EnterNameField = 2131296280;
+			// aapt resource value: 0x7f0a001f
+			public const int EnterEmailField = 2131361823;
 			
-			// aapt resource value: 0x7f09001b
-			public const int EnterPhoneField = 2131296283;
+			// aapt resource value: 0x7f0a001d
+			public const int EnterNameField = 2131361821;
 			
-			// aapt resource value: 0x7f090016
-			public const int ProfileRelativeLayout = 2131296278;
+			// aapt resource value: 0x7f0a0020
+			public const int EnterPhoneField = 2131361824;
 			
-			// aapt resource value: 0x7f090017
-			public const int ProfileTitle = 2131296279;
+			// aapt resource value: 0x7f0a0018
+			public const int InformationArtImage = 2131361816;
 			
-			// aapt resource value: 0x7f09001c
-			public const int SaveChanges = 2131296284;
+			// aapt resource value: 0x7f0a001a
+			public const int InformationContent = 2131361818;
 			
-			// aapt resource value: 0x7f09000a
-			public const int SendEmail = 2131296266;
+			// aapt resource value: 0x7f0a0017
+			public const int InformationRelativeLayout = 2131361815;
 			
-			// aapt resource value: 0x7f09001d
-			public const int SplashImage = 2131296285;
+			// aapt resource value: 0x7f0a0019
+			public const int InformationTitle = 2131361817;
 			
-			// aapt resource value: 0x7f090006
-			public const int ViewAppointments = 2131296262;
+			// aapt resource value: 0x7f0a001b
+			public const int ProfileRelativeLayout = 2131361819;
 			
-			// aapt resource value: 0x7f090002
-			public const int appointmentListView = 2131296258;
+			// aapt resource value: 0x7f0a001c
+			public const int ProfileTitle = 2131361820;
 			
-			// aapt resource value: 0x7f090000
-			public const int appointmentsRelativeLayout1 = 2131296256;
+			// aapt resource value: 0x7f0a0021
+			public const int SaveChanges = 2131361825;
 			
-			// aapt resource value: 0x7f090001
-			public const int appointmentsTitle = 2131296257;
+			// aapt resource value: 0x7f0a000b
+			public const int SendEmail = 2131361803;
 			
-			// aapt resource value: 0x7f090011
-			public const int buttonBottomLeft = 2131296273;
+			// aapt resource value: 0x7f0a0022
+			public const int SplashImage = 2131361826;
 			
-			// aapt resource value: 0x7f090010
-			public const int buttonBottomRight = 2131296272;
+			// aapt resource value: 0x7f0a0006
+			public const int ViewAppointments = 2131361798;
 			
-			// aapt resource value: 0x7f09000d
-			public const int buttonTopLeft = 2131296269;
+			// aapt resource value: 0x7f0a0002
+			public const int appointmentListView = 2131361794;
 			
-			// aapt resource value: 0x7f09000f
-			public const int buttonTopRight = 2131296271;
+			// aapt resource value: 0x7f0a0000
+			public const int appointmentsRelativeLayout1 = 2131361792;
 			
-			// aapt resource value: 0x7f090003
-			public const int calendarRelativeLayout1 = 2131296259;
+			// aapt resource value: 0x7f0a0001
+			public const int appointmentsTitle = 2131361793;
 			
-			// aapt resource value: 0x7f090004
-			public const int calendarView1 = 2131296260;
+			// aapt resource value: 0x7f0a0012
+			public const int buttonBottomLeft = 2131361810;
 			
-			// aapt resource value: 0x7f090005
-			public const int makeAppointmentButton = 2131296261;
+			// aapt resource value: 0x7f0a0011
+			public const int buttonBottomRight = 2131361809;
 			
-			// aapt resource value: 0x7f090012
-			public const int nyasLogo = 2131296274;
+			// aapt resource value: 0x7f0a000e
+			public const int buttonTopLeft = 2131361806;
 			
-			// aapt resource value: 0x7f09000c
-			public const int relativeLayout1 = 2131296268;
+			// aapt resource value: 0x7f0a0010
+			public const int buttonTopRight = 2131361808;
 			
-			// aapt resource value: 0x7f09000e
-			public const int relativelayoutSpeechBubble = 2131296270;
+			// aapt resource value: 0x7f0a0003
+			public const int calendarRelativeLayout1 = 2131361795;
 			
-			// aapt resource value: 0x7f090013
-			public const int speechBubble = 2131296275;
+			// aapt resource value: 0x7f0a0004
+			public const int calendarView1 = 2131361796;
 			
-			// aapt resource value: 0x7f090014
-			public const int speechBubbleText = 2131296276;
+			// aapt resource value: 0x7f0a0005
+			public const int makeAppointmentButton = 2131361797;
+			
+			// aapt resource value: 0x7f0a0013
+			public const int nyasLogo = 2131361811;
+			
+			// aapt resource value: 0x7f0a000d
+			public const int relativeLayout1 = 2131361805;
+			
+			// aapt resource value: 0x7f0a000f
+			public const int relativelayoutSpeechBubble = 2131361807;
+			
+			// aapt resource value: 0x7f0a0014
+			public const int speechBubble = 2131361812;
+			
+			// aapt resource value: 0x7f0a0015
+			public const int speechBubbleText = 2131361813;
 			
 			static Id()
 			{
@@ -330,6 +345,25 @@ namespace NYASApp
 			}
 			
 			private Id()
+			{
+			}
+		}
+		
+		public partial class Integer
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int IAWhatsNYASDoContext = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int testInt = 2131034113;
+			
+			static Integer()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Integer()
 			{
 			}
 		}
@@ -350,10 +384,13 @@ namespace NYASApp
 			public const int HomepageLayout = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Profile_Activity_Layout = 2130903044;
+			public const int Information_Activity_Layout = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int Splash_Screen_Layout = 2130903045;
+			public const int Profile_Activity_Layout = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int Splash_Screen_Layout = 2130903046;
 			
 			static Layout()
 			{
@@ -368,170 +405,182 @@ namespace NYASApp
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060016
-			public const int AboutUs = 2131099670;
+			// aapt resource value: 0x7f07001a
+			public const int AboutUs = 2131165210;
 			
-			// aapt resource value: 0x7f060027
-			public const int AboutUsDetailed = 2131099687;
+			// aapt resource value: 0x7f07002b
+			public const int AboutUsDetailed = 2131165227;
 			
-			// aapt resource value: 0x7f060013
-			public const int Advice = 2131099667;
+			// aapt resource value: 0x7f070017
+			public const int Advice = 2131165207;
 			
-			// aapt resource value: 0x7f060017
-			public const int BecomeACarer = 2131099671;
+			// aapt resource value: 0x7f07001b
+			public const int BecomeACarer = 2131165211;
 			
-			// aapt resource value: 0x7f060029
-			public const int BubbleMsg1 = 2131099689;
+			// aapt resource value: 0x7f07002d
+			public const int BubbleMsg1 = 2131165229;
 			
-			// aapt resource value: 0x7f06002a
-			public const int BubbleMsg2 = 2131099690;
+			// aapt resource value: 0x7f07002e
+			public const int BubbleMsg2 = 2131165230;
 			
-			// aapt resource value: 0x7f06002b
-			public const int BubbleMsg3 = 2131099691;
+			// aapt resource value: 0x7f07002f
+			public const int BubbleMsg3 = 2131165231;
 			
-			// aapt resource value: 0x7f06002c
-			public const int BubbleMsg4 = 2131099692;
+			// aapt resource value: 0x7f070030
+			public const int BubbleMsg4 = 2131165232;
 			
-			// aapt resource value: 0x7f06000f
-			public const int CarerInfo = 2131099663;
+			// aapt resource value: 0x7f070013
+			public const int CarerInfo = 2131165203;
 			
-			// aapt resource value: 0x7f060026
-			public const int ComingSoon = 2131099686;
+			// aapt resource value: 0x7f07002a
+			public const int ComingSoon = 2131165226;
 			
-			// aapt resource value: 0x7f060033
-			public const int Confirm = 2131099699;
+			// aapt resource value: 0x7f070037
+			public const int Confirm = 2131165239;
 			
-			// aapt resource value: 0x7f060014
-			public const int ContactNYAS = 2131099668;
+			// aapt resource value: 0x7f070005
+			public const int ContactInstructions = 2131165189;
 			
-			// aapt resource value: 0x7f060023
-			public const int ContactUs = 2131099683;
+			// aapt resource value: 0x7f070018
+			public const int ContactNYAS = 2131165208;
 			
-			// aapt resource value: 0x7f060035
-			public const int CorrectPin = 2131099701;
+			// aapt resource value: 0x7f070027
+			public const int ContactUs = 2131165223;
 			
-			// aapt resource value: 0x7f06002d
-			public const int CustomBubbleMsg1 = 2131099693;
+			// aapt resource value: 0x7f070039
+			public const int CorrectPin = 2131165241;
 			
-			// aapt resource value: 0x7f06002e
-			public const int CustomBubbleMsg2Part1Of2 = 2131099694;
+			// aapt resource value: 0x7f070031
+			public const int CustomBubbleMsg1 = 2131165233;
 			
-			// aapt resource value: 0x7f06002f
-			public const int CustomBubbleMsg2Part2Of2 = 2131099695;
+			// aapt resource value: 0x7f070032
+			public const int CustomBubbleMsg2Part1Of2 = 2131165234;
 			
-			// aapt resource value: 0x7f060030
-			public const int CustomBubbleMsg3Part1Of2 = 2131099696;
+			// aapt resource value: 0x7f070033
+			public const int CustomBubbleMsg2Part2Of2 = 2131165235;
 			
-			// aapt resource value: 0x7f060031
-			public const int CustomBubbleMsg3Part2Of2 = 2131099697;
+			// aapt resource value: 0x7f070034
+			public const int CustomBubbleMsg3Part1Of2 = 2131165236;
 			
-			// aapt resource value: 0x7f06001f
-			public const int Donate = 2131099679;
+			// aapt resource value: 0x7f070035
+			public const int CustomBubbleMsg3Part2Of2 = 2131165237;
 			
-			// aapt resource value: 0x7f060003
-			public const int EnterYourAge = 2131099651;
+			// aapt resource value: 0x7f070023
+			public const int Donate = 2131165219;
 			
-			// aapt resource value: 0x7f060004
-			public const int EnterYourEmail = 2131099652;
+			// aapt resource value: 0x7f070007
+			public const int EnterYourAge = 2131165191;
 			
-			// aapt resource value: 0x7f060002
-			public const int EnterYourName = 2131099650;
+			// aapt resource value: 0x7f070008
+			public const int EnterYourEmail = 2131165192;
 			
-			// aapt resource value: 0x7f060005
-			public const int EnterYourPhoneNumber = 2131099653;
+			// aapt resource value: 0x7f070006
+			public const int EnterYourName = 2131165190;
 			
-			// aapt resource value: 0x7f060008
-			public const int Freephone = 2131099656;
+			// aapt resource value: 0x7f070009
+			public const int EnterYourPhoneNumber = 2131165193;
 			
-			// aapt resource value: 0x7f06000d
-			public const int GetInTouch = 2131099661;
+			// aapt resource value: 0x7f07000c
+			public const int Freephone = 2131165196;
 			
-			// aapt resource value: 0x7f060007
-			public const int HowToConactNYAS = 2131099655;
+			// aapt resource value: 0x7f070011
+			public const int GetInTouch = 2131165201;
 			
-			// aapt resource value: 0x7f06001d
-			public const int HowToGetHelp = 2131099677;
+			// aapt resource value: 0x7f07000b
+			public const int HowToConactNYAS = 2131165195;
 			
-			// aapt resource value: 0x7f06000c
-			public const int KidsZone = 2131099660;
+			// aapt resource value: 0x7f070021
+			public const int HowToGetHelp = 2131165217;
 			
-			// aapt resource value: 0x7f06000a
-			public const int MakeAppointment = 2131099658;
+			// aapt resource value: 0x7f070004
+			public const int IAWhatsNYASDoContent = 2131165188;
 			
-			// aapt resource value: 0x7f060015
-			public const int MoreCarerInfo = 2131099669;
+			// aapt resource value: 0x7f070003
+			public const int IAWhatsNYASDoTitle = 2131165187;
 			
-			// aapt resource value: 0x7f06000e
-			public const int MoreInfo = 2131099662;
+			// aapt resource value: 0x7f070010
+			public const int KidsZone = 2131165200;
 			
-			// aapt resource value: 0x7f060022
-			public const int MyAppointments = 2131099682;
+			// aapt resource value: 0x7f07000e
+			public const int MakeAppointment = 2131165198;
 			
-			// aapt resource value: 0x7f060020
-			public const int MyNYAS = 2131099680;
+			// aapt resource value: 0x7f070019
+			public const int MoreCarerInfo = 2131165209;
 			
-			// aapt resource value: 0x7f060021
-			public const int MyProfile = 2131099681;
+			// aapt resource value: 0x7f070012
+			public const int MoreInfo = 2131165202;
 			
-			// aapt resource value: 0x7f060012
-			public const int NotFair = 2131099666;
+			// aapt resource value: 0x7f070026
+			public const int MyAppointments = 2131165222;
 			
-			// aapt resource value: 0x7f060024
-			public const int Options = 2131099684;
+			// aapt resource value: 0x7f070024
+			public const int MyNYAS = 2131165220;
 			
-			// aapt resource value: 0x7f060032
-			public const int Pin = 2131099698;
+			// aapt resource value: 0x7f070025
+			public const int MyProfile = 2131165221;
 			
-			// aapt resource value: 0x7f060036
-			public const int PinConfirmed = 2131099702;
+			// aapt resource value: 0x7f070016
+			public const int NotFair = 2131165206;
 			
-			// aapt resource value: 0x7f060028
-			public const int PinInstructions = 2131099688;
+			// aapt resource value: 0x7f070028
+			public const int Options = 2131165224;
 			
-			// aapt resource value: 0x7f06001e
-			public const int RateOurService = 2131099678;
+			// aapt resource value: 0x7f070036
+			public const int Pin = 2131165238;
 			
-			// aapt resource value: 0x7f060025
-			public const int ResetPin = 2131099685;
+			// aapt resource value: 0x7f07003a
+			public const int PinConfirmed = 2131165242;
 			
-			// aapt resource value: 0x7f060006
-			public const int SaveChanges = 2131099654;
+			// aapt resource value: 0x7f07002c
+			public const int PinInstructions = 2131165228;
 			
-			// aapt resource value: 0x7f060011
-			public const int SchoolProblems = 2131099665;
+			// aapt resource value: 0x7f070022
+			public const int RateOurService = 2131165218;
 			
-			// aapt resource value: 0x7f060009
-			public const int SendEmail = 2131099657;
+			// aapt resource value: 0x7f070029
+			public const int ResetPin = 2131165225;
 			
-			// aapt resource value: 0x7f060018
-			public const int SpecialCharacter1 = 2131099672;
+			// aapt resource value: 0x7f07000a
+			public const int SaveChanges = 2131165194;
 			
-			// aapt resource value: 0x7f060019
-			public const int SpecialCharacter2 = 2131099673;
+			// aapt resource value: 0x7f070015
+			public const int SchoolProblems = 2131165205;
 			
-			// aapt resource value: 0x7f06001a
-			public const int SpecialCharacter3 = 2131099674;
+			// aapt resource value: 0x7f07000d
+			public const int SendEmail = 2131165197;
 			
-			// aapt resource value: 0x7f06001b
-			public const int SpecialCharacter4 = 2131099675;
+			// aapt resource value: 0x7f070002
+			public const int Slogan = 2131165186;
 			
-			// aapt resource value: 0x7f06000b
-			public const int ViewAppointments = 2131099659;
+			// aapt resource value: 0x7f07001c
+			public const int SpecialCharacter1 = 2131165212;
 			
-			// aapt resource value: 0x7f06001c
-			public const int WhatsNYAS = 2131099676;
+			// aapt resource value: 0x7f07001d
+			public const int SpecialCharacter2 = 2131165213;
 			
-			// aapt resource value: 0x7f060034
-			public const int WrongPin = 2131099700;
+			// aapt resource value: 0x7f07001e
+			public const int SpecialCharacter3 = 2131165214;
 			
-			// aapt resource value: 0x7f060001
-			public const int app_name = 2131099649;
+			// aapt resource value: 0x7f07001f
+			public const int SpecialCharacter4 = 2131165215;
 			
-			// aapt resource value: 0x7f060010
-			public const int feelingBlue = 2131099664;
+			// aapt resource value: 0x7f07000f
+			public const int ViewAppointments = 2131165199;
 			
-			// aapt resource value: 0x7f060000
-			public const int hello = 2131099648;
+			// aapt resource value: 0x7f070020
+			public const int WhatsNYAS = 2131165216;
+			
+			// aapt resource value: 0x7f070038
+			public const int WrongPin = 2131165240;
+			
+			// aapt resource value: 0x7f070001
+			public const int app_name = 2131165185;
+			
+			// aapt resource value: 0x7f070014
+			public const int feelingBlue = 2131165204;
+			
+			// aapt resource value: 0x7f070000
+			public const int hello = 2131165184;
 			
 			static String()
 			{
@@ -546,8 +595,8 @@ namespace NYASApp
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f080000
-			public const int calendarTextStyle = 2131230720;
+			// aapt resource value: 0x7f090000
+			public const int calendarTextStyle = 2131296256;
 			
 			static Style()
 			{

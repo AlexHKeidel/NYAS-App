@@ -78,8 +78,8 @@
         <member name="M:NYASApp.HomepageActivity.EnterPin(System.String,System.Int32)">
             <summary>
             This method is called by the buttons when in LOGIN_STATE.
-            Checks for the current state of the Pin and appends it
-            Compares the pin the user has put in 
+            Checks for the current state of the Pin and appends it.
+            Compares the pin the user has put in to the saved one.
             </summary>
             <param name="Symbol">Symbol.</param>
             <param name="resID">Res I.</param>
@@ -162,6 +162,18 @@
             Applies the random bubble message.
             </summary>
         </member>
+        <member name="M:NYASApp.HomepageActivity.SetCustomBubbleMessage">
+            <summary>
+            Sets the custom bubble message containing the username.
+            This is only called when <see cref="M:NYASApp.HomepageActivity.CheckUserName"/>  returns true and <see cref="F:NYASApp.HomepageActivity.UserName"/> has been set.
+            </summary>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.CheckUserName">
+            <summary>
+            Checks if the user has saved a profile and reads the username from it and saves it in <see cref="F:NYASApp.HomepageActivity.UserName"/>
+            </summary>
+            <returns><c>true</c>, if user name was checked and set <c>false</c> otherwise.</returns>
+        </member>
         <member name="M:NYASApp.HomepageActivity.OnBackPressed">
             <summary>
             Called when the activity has detected the user's press of the back
@@ -178,6 +190,17 @@
         <member name="M:NYASApp.HomepageActivity.StartProfileActivity">
             <summary>
             Starts the profile activity.
+            </summary>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.StartContactActivity">
+            <summary>
+            Starts the contact activity.
+            </summary>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.StartInformationActivit(System.Int32)">
+            <summary>
+            Starts the information activit.
+            Give this activity the chosen context, such as "what's nyas do?"
             </summary>
         </member>
         <member name="T:NYASApp.CalendarActivity">
@@ -395,6 +418,34 @@
             <summary>
             Sets up the listeners for the buttons of this activity.
             </summary>
+        </member>
+        <member name="T:NYASApp.InformationActivity">
+            <summary>
+            Information activity displaying some relevant information based upon the selected topic.
+            </summary>
+        </member>
+        <member name="M:NYASApp.InformationActivity.OnCreate(Android.OS.Bundle)">
+            <summary>
+            Raises the create event.
+            </summary>
+            <param name="bundle">Bundle.</param>
+        </member>
+        <member name="M:NYASApp.InformationActivity.SetupResources">
+            <summary>
+            Sets up the resources for this activity.
+            </summary>
+        </member>
+        <member name="M:NYASApp.InformationActivity.SetupLayouts">
+            <summary>
+            Applies the layouts for the activity such as making the content textview scroll.
+            </summary>
+        </member>
+        <member name="M:NYASApp.InformationActivity.ApplyState(System.Int32)">
+            <summary>
+            Applies the selected state.
+            This is chosen depending on the value passed to this activity.
+            </summary>
+            <param name="state">State.</param>
         </member>
     </members>
 </doc>

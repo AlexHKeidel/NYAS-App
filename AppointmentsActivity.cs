@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-//Created by Alexander Keidel (22397868), last edited 03/05/2015
+//Created by Alexander Keidel (22397868), last edited 07/05/2015
 namespace NYASApp
 {
 	/// <summary>
@@ -84,7 +84,7 @@ namespace NYASApp
 		/// <param name="appointment">Appointment.</param>
 		private void StartCustomDialog(int position, String appointment){
 			AlertDialog.Builder ad = new AlertDialog.Builder (this);
-			ad.SetMessage (appointment + "\nChoose an option.");
+			ad.SetMessage (appointment + "\nDo you want to delete this entry?");
 			ad.SetCancelable (true);
 			ad.SetPositiveButton("Delete", delegate {
 				DeleteEntry(position);

@@ -24,6 +24,22 @@
             android:textAllCaps="false"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ContactContent"
+            android:text="@string/ContactInstructions"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:gravity="left"
+            android:textAllCaps="false"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/ContactTitle"
+            android:scrollbars="vertical" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,7 +51,7 @@
             android:background="@drawable/rectangle_green_gradient"
             android:layout_marginBottom="15dp"
             android:layout_marginTop="15dp"
-            android:layout_below="@id/ContactTitle" />
+            android:layout_below="@id/ContactContent" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

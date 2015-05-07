@@ -22,6 +22,7 @@ namespace NYASApp
 	public class ContactActivity : Activity
 	{
 		Button CallFreephone, SendEmail;
+		TextView ContentField;
 
 		/// <summary>
 		/// Raises the create event.
@@ -42,6 +43,9 @@ namespace NYASApp
 		private void SetupResources(){
 			CallFreephone = (Button)FindViewById (Resource.Id.CallFreePhone);
 			SendEmail = (Button)FindViewById (Resource.Id.SendEmail);
+			ContentField = (TextView)FindViewById (Resource.Id.ContactContent);
+			ContentField.MovementMethod = Android.Text.Method.ScrollingMovementMethod.Instance; //setting scrolling method
+			ContentField.SetMaxLines (10); //setting maximum lines after which this textview starts scrolling
 		}
 
 		/// <summary>
