@@ -156,6 +156,9 @@ namespace NYASApp
 				sr.Close (); //closing the reader
 				sr.Dispose (); //disposing of the reader
 				fr.Dispose (); //disposing of the file stream
+				if(Profile.Equals("")){
+					return "No Profile Set";
+				}
 				return Profile; //return the read line as a String.
 			} catch (Exception){
 				return "No Profile Set";

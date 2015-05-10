@@ -24,6 +24,13 @@
 \n-Experiencing the separation or divorce of your parents
 \n-Not feeling safe</string>
 
+<string name="CarerInfoTitle">Carer Information</string>
+<string name="CarerInfoContent">NYAS is an established national charity that ensures that children and young people are given a voice in any issue that affects them.\n
+
+We have many volunteer posts available across the UK.\n
+
+"Volunteering has always been the most rewarding of my activities and NYAS showed me a new way of exploring that world. The training was perfect to get started in the programme and get to know the area and your role better, and it was very nicely organised. The support given by the coordinators is fantastic giving a very warm approach to the programme. It is indeed a great experience for you as a person and for the young person, and I strongly recommend it to anyone. It develops your skills, broadens your mind and allows you to meet very interesting people. I'm sure you would not be let down."</string>
+
 <string name="ContactInstructions">You can either send us an email with your name and concerns or just give us a call.\nPlease note that calling us from a mobile might charge you.</string>
 	<string name="EnterYourName">Enter Your Name</string>
 	<string name="EnterYourAge">Enter Your Age</string>
@@ -71,15 +78,21 @@
 	<string name="Options">Options</string>
 
 	<string name="ResetPin">Reset Pin</string>
+	<string name="DeleteProfile">Delte My Profile</string>
+	<string name="DelteAppointments">Delte All Appointments</string>
+	<string name="ChangeToWidgits">Change To Widgits</string>
 	<string name="ComingSoon">Coming Soon</string>
 
 	<string name="AboutUsDetailed">We offer information, advice, advocacy and legal representation to children, young people and vulnerable adults.</string>
 	<string name="PinInstructions">Choose your personal pin from these symbols. Just pick 4 and remember the order!</string>
+	<string name="CarefulOptions">CAREFUL: Deleting your Profile or Appointments is PERMANENT! You could always re-enter them of course.</string>
+	<string name="PersonalSpace">Welcome to your personal space.\nOnly your personal pin lets you get here! Remember it well.</string>
 
 	<string name="BubbleMsg1">Welcome to the NYAS App!</string>
 	<string name="BubbleMsg2">Welcome back! How can we help?</string>
 	<string name="BubbleMsg3">Hello there, how are you today?</string>
 	<string name="BubbleMsg4">Help me! I\'m trapped in here!</string>
+	<string name="BubbleMsg5">Click here to get back to the main menu!</string>
 
 	<string name="CustomBubbleMsg1">Welcome back </string>
 	<string name="CustomBubbleMsg2Part1Of2">Hello</string>
@@ -137,8 +150,8 @@
 
 	<string-array name="OptionStrings">
 		<item>@string/ResetPin</item>
-		<item>@string/ComingSoon</item>
-		<item>@string/ComingSoon</item>
-		<item>@string/ComingSoon</item>
+		<item>@string/DeleteProfile</item>
+		<item>@string/DelteAppointments</item>
+		<item>@string/ChangeToWidgits</item>
 	</string-array>
 </resources>

@@ -51,7 +51,7 @@
         </member>
         <member name="M:NYASApp.HomepageActivity.SetupResourceStringIDs">
             <summary>
-            Setups the resource string I ds.
+            Setups the resource string Ids.
             Getting the relevant array (of Strings) from the Strings.xml file.
             Saving the resource ids of the Strings contained within the arrays in their respective integer array.
             This is done so the activity can remember or interrogate its on state istead of just changing the strings within the buttons.
@@ -61,6 +61,7 @@
             <summary>
             Applies the specified state to this activity.
             The previous and current state values will also be updated.
+            The differnt states are defined as constant values global to this activity.
             </summary>
             <param name="state">Specified state</param>
         </member>
@@ -71,6 +72,7 @@
             Nested inside the first switch-case are other switch-cases that check for the selected button.
             Knowing the state of the activity and which button has been pressed will decide what happens.
             You can not access the current state of the button class via for example GetText(), such a method does not exist.
+            In order to keep track of the applied state and all buttons this way has been chosen.
             This means that this activity works around this by assigning const values to the state of the button or the location to the button, see near class declaration.
             </summary>
             <param name="selectedButton">Selected button.</param>
@@ -201,6 +203,12 @@
             <summary>
             Starts the information activit.
             Give this activity the chosen context, such as "what's nyas do?"
+            </summary>
+        </member>
+        <member name="M:NYASApp.HomepageActivity.StartCarerEmailRequest">
+            <summary>
+            Starts the carer email request.
+            This will let the user choose their preferred email application and give them a template email containing the given recipient, subject and message.
             </summary>
         </member>
         <member name="T:NYASApp.CalendarActivity">

@@ -39,6 +39,8 @@ namespace NYASApp
 		const int PIN_COLON_BOX_CONTENT = Resource.String.Pin;
 		const int CONFIRM_PIN_BOX_CONTENT = Resource.String.Confirm;
 		const int PIN_CONFIRMED_BOX_CONTENT = Resource.String.PinConfirmed;
+		const int CAREFUL_WITH_OPTIONS_BOX_CONTENT = Resource.String.CarefulOptions;
+		const int PERSONAL_SPACE_BOX_CONTENT = Resource.String.PersonalSpace;
 		int currentBoxContent = -1;
 
 		const int DEFAULT_HOME_STATE = 0;
@@ -127,7 +129,7 @@ namespace NYASApp
 		/// </summary>
 		private void SetupLayouts()
 		{
-			//holding the display metrics in a variable
+			//holding the display metrics in variables
 			var metrics = Resources.DisplayMetrics;
 			var widthInDp = ConvertPixelsToDp(metrics.WidthPixels);
 			var heightInDp = ConvertPixelsToDp(metrics.HeightPixels);
@@ -211,7 +213,7 @@ namespace NYASApp
 		}
 
 		/// <summary>
-		/// Setups the resource string I ds.
+		/// Setups the resource string Ids.
 		/// Getting the relevant array (of Strings) from the Strings.xml file.
 		/// Saving the resource ids of the Strings contained within the arrays in their respective integer array.
 		/// This is done so the activity can remember or interrogate its on state istead of just changing the strings within the buttons.
@@ -294,6 +296,7 @@ namespace NYASApp
 		/// <summary>
 		/// Applies the specified state to this activity.
 		/// The previous and current state values will also be updated.
+		/// The differnt states are defined as constant values global to this activity.
 		/// </summary>
 		/// <param name="state">Specified state</param>
 		private void ApplyState(int state){ //apply the chosen state to this activity
@@ -342,13 +345,15 @@ namespace NYASApp
 				break;
 			case MY_NYAS_STATE:
 				for (int i = 0; i < 4; i++) {
-					buttons [i].SetText (MyNyasStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
+					buttons [i].SetText (MyNyasStringIDs [i]); //changing the text of the buttons to the string ids associated with this state
 				}
+				UpdateBottomTextBox (PERSONAL_SPACE_BOX_CONTENT); //update the bottom box content with the "Welcome to your personal space." Message
 				break;
 			case OPTION_STATE:
 				for (int i = 0; i < 4; i++) {
-					buttons [i].SetText (OptionStringIDs[i]); //changing the text of the buttons to the string ids associated with this state
+					buttons [i].SetText (OptionStringIDs [i]); //changing the text of the buttons to the string ids associated with this state
 				}
+				UpdateBottomTextBox (CAREFUL_WITH_OPTIONS_BOX_CONTENT); //change the bottom box content to display the options warning!
 				break;
 			}
 			previousState = currentState; //setting previous state
@@ -361,6 +366,7 @@ namespace NYASApp
 		/// Nested inside the first switch-case are other switch-cases that check for the selected button.
 		/// Knowing the state of the activity and which button has been pressed will decide what happens.
 		/// You can not access the current state of the button class via for example GetText(), such a method does not exist.
+		/// In order to keep track of the applied state and all buttons this way has been chosen.
 		/// This means that this activity works around this by assigning const values to the state of the button or the location to the button, see near class declaration.
 		/// </summary>
 		/// <param name="selectedButton">Selected button.</param>
@@ -458,28 +464,45 @@ namespace NYASApp
 				break;
 
 			case OPTION_STATE:
-				switch(selectedButton){
+				switch (selectedButton) {
 				case TopLeft:
 					MyFileManager.DeletePin (); //delete the pin
 					PinSet = false;
 					PinEntered = false;
 					InputPin.Clear ();
 					UserPin.Clear ();
-					ApplyState(LOGIN_STATE); //promt the user to the login state
+					ApplyState (LOGIN_STATE); //promt the user to the login state
 					break;
 				case TopRight:
-
+					MyFileManager.WriteProfile (""); //Overwrites the profile with an empty string, effectively deleting it.
+					Toast.MakeText (BaseContext, "Your Profile has been deleted.", ToastLength.Long).Show ();
 					break;
 				case BottomLeft:
-
+					MyFileManager.OverwriteAppointments (""); //Overwrites the appointments with an empty string, effectively deleting them.
+					Toast.MakeText (BaseContext, "Your Appointments have been deleted.", ToastLength.Long).Show ();
 					break;
-
 				case BottomRight:
-
+					Toast.MakeText (BaseContext, "The Widgit Feature has not been implemented in this prototype.", ToastLength.Long).Show ();
 					break;
 				}
 				break;
 
+			case CARER_INFO_STATE:
+				switch (selectedButton) {
+				case TopLeft:
+					StartInformationActivit (Resources.GetInteger (Resource.Integer.IAWhatsNYASDoContext)); // start an information screen on "What does NYAS do?"
+					break;
+				case TopRight:
+					StartInformationActivit (Resources.GetInteger (Resource.Integer.CarerInfoContext)); //start an information screen on "Carer Information"
+					break;
+				case BottomLeft:
+					StartCarerEmailRequest (); //start the custom 'become a carer' email request
+					break;
+				case BottomRight:
+					StartContactActivity (); //start the contact screen
+					break;				
+				}
+				break;
 			}
 		}
 
@@ -718,7 +741,7 @@ namespace NYASApp
 		/// </summary>
 		private void ApplyRandomBubbleMessage(){ //apply a random message to the text view on top of the speech bubble
 			Random randy = new Random ();
-			int temp = randy.Next (1, 101) / 25; //roll random number between 1 (inclusive) and 101 (exclusive)
+			int temp = randy.Next (1, 101) / 15; //roll random number between 1 (inclusive) and 101 (exclusive)
 			switch (temp) {
 			case 1:
 				speechBubbleText.SetText (Resource.String.BubbleMsg1);
@@ -732,8 +755,11 @@ namespace NYASApp
 			case 4:
 				speechBubbleText.SetText (Resource.String.BubbleMsg4);
 				break;
+			case 5:
+				speechBubbleText.SetText (Resource.String.BubbleMsg5);
+				break;
 			default:
-				speechBubbleText.SetText (Resource.String.BubbleMsg1);
+				speechBubbleText.SetText (Resource.String.BubbleMsg5);
 				break;
 			}
 		}
@@ -769,13 +795,17 @@ namespace NYASApp
 		/// </summary>
 		/// <returns><c>true</c>, if user name was checked and set <c>false</c> otherwise.</returns>
 		private bool CheckUserName(){
-			if (MyFileManager.ReadProfile ().Equals ("No Profile Set")) {
+			try{
+			if (MyFileManager.ReadProfile ().Equals ("No Profile Set") || MyFileManager.ReadProfile().Length == 0 || MyFileManager.ReadProfile().Equals("")) {
 				return false;
 			} else {
 				String Splitter = MyFileManager.ReadProfile ();
 				String[] Profile = Splitter.Split (',');
 				UserName = Profile [0];
 				return true;
+			}
+			} catch (NullReferenceException){
+				return false;
 			}
 		}
 
@@ -820,9 +850,26 @@ namespace NYASApp
 		/// Give this activity the chosen context, such as "what's nyas do?"
 		/// </summary>
 		private void StartInformationActivit (int context){
-			Intent CustomInfoIntent = new Intent (this, typeof(InformationActivity));
+			 Intent CustomInfoIntent = new Intent (this, typeof(InformationActivity));
 			CustomInfoIntent.PutExtra ("CONTEXT", context);
 			StartActivity (CustomInfoIntent);
+		}
+
+		/// <summary>
+		/// Starts the carer email request.
+		/// This will let the user choose their preferred email application and give them a template email containing the given recipient, subject and message.
+		/// </summary>
+		private void StartCarerEmailRequest(){
+			var email = new Intent (Android.Content.Intent.ActionSend);  // see http://developer.xamarin.com/recipes/android/fundamentals/intent/launch_the_phone_dialer/
+			email.PutExtra (Android.Content.Intent.ExtraEmail, 
+				new string[]{"alexander.keidel@go.edgehill.ac.uk"} ); //here you would put recruitment@nyas.net
+
+			email.PutExtra (Android.Content.Intent.ExtraSubject, "Become a Carer"); //replace with the desired subject
+
+			email.PutExtra (Android.Content.Intent.ExtraText, 
+				"This is an automatically generated test.\nThis may be used by NYAS if they want to implement this feature.\nYou would put your recruitment application to become a carer here.\nThe recipient would become recruitment@nyas.net"); //generated text for the email.
+			email.SetType ("message/rfc822");
+			StartActivity (email);
 		}
 	}
 }

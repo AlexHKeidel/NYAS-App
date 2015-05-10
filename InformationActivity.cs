@@ -21,8 +21,10 @@ namespace NYASApp
 	public class InformationActivity : Activity
 	{
 		const int WHATS_NYAS_DO_STATE = 0; //THIS HAS TO BE IDENTICAL TO Resources.GetInteger(Resource.Integer.IAWhatsNYASDoContext);
+		const int CARER_INFO_STATE = 1; //THIS HAS TO BE IDENTICAL TO Resources.GetInteger(Resource.Integer.CarerInfoContext);
 		TextView TitleField, ContentField;
 		String WhatsNYASDoTitle, WhatsNYASDoContent;
+		String CarerInfoTitle, CarerInfoContent;
 		/// <summary>
 		/// Raises the create event.
 		/// </summary>
@@ -47,6 +49,8 @@ namespace NYASApp
 			ContentField = (TextView)FindViewById (Resource.Id.InformationContent);
 			WhatsNYASDoTitle = Resources.GetString (Resource.String.IAWhatsNYASDoTitle);
 			WhatsNYASDoContent = Resources.GetString (Resource.String.IAWhatsNYASDoContent);
+			CarerInfoTitle = Resources.GetString (Resource.String.CarerInfoTitle);
+			CarerInfoContent = Resources.GetString (Resource.String.CarerInfoContent);
 		}
 
 		/// <summary>
@@ -68,9 +72,13 @@ namespace NYASApp
 				TitleField.Text = WhatsNYASDoTitle;
 				ContentField.Text = WhatsNYASDoContent;
 				break;
+			case CARER_INFO_STATE:
+				TitleField.Text = CarerInfoTitle;
+				ContentField.Text = CarerInfoContent;
+				break;
 			default:
-				TitleField.Text = WhatsNYASDoTitle;
-				ContentField.Text = WhatsNYASDoContent;
+				TitleField.Text = CarerInfoTitle;
+				ContentField.Text = CarerInfoContent;
 				break;
 			}
 		}

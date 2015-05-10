@@ -65,7 +65,7 @@ namespace NYASApp
 				email.PutExtra (Android.Content.Intent.ExtraSubject, "Contact NYAS Example"); //replace with the desired subject
 
 				email.PutExtra (Android.Content.Intent.ExtraText, 
-					"This is an automatically generated test.\nThis may be used by NYAS if they want to implement this feature."); //generated text for the email.
+					"This is an automatically generated test.\nThis may be used by NYAS if they want to implement this feature.\nThe recipient of this email would become help@nyas.net"); //generated text for the email.
 				email.SetType ("message/rfc822");
 				StartActivity (email);
 			};

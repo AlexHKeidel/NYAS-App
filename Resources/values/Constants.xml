@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
 	<integer name="IAWhatsNYASDoContext">0</integer>
+	<integer name="CarerInfoContext">1</integer>
 </resources>
